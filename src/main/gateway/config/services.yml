@@ -5,6 +5,15 @@ gateway-solution/another-service.xml:
   - "POST"
   - "GET"
   - "PUT"
+  properties: {}
+gateway-solution/db-service.xml:
+  url: "/db-service"
+  httpMethods:
+  - "DELETE"
+  - "POST"
+  - "GET"
+  - "PUT"
+  properties: {}
 gateway-solution/my-gateway-api.xml:
   url: "/example"
   httpMethods:
@@ -12,3 +21,4 @@ gateway-solution/my-gateway-api.xml:
   - "POST"
   - "GET"
   - "PUT"
+  properties: {}

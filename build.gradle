@@ -4,10 +4,22 @@
  * of the MIT license.  See the LICENSE file for details.
  */
 
-plugins {
-    id "com.ca.apim.gateway.gateway-developer-plugin" version "0.5.00"
-    id "com.ca.apim.gateway.gateway-export-plugin" version "0.5.00"
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.ca.apim.gateway:gateway-export-plugin:0.5.12-SNAPSHOT"
+        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.5.12-SNAPSHOT"
+    }
 }
+
+apply plugin: "com.ca.apim.gateway.gateway-developer-plugin"
+apply plugin: "com.ca.apim.gateway.gateway-export-plugin"
 
 group 'com.ca.apim.gateway'
 version '0.5.00'

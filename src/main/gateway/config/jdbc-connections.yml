@@ -1,0 +1,9 @@
+MySQL:
+  driverClass: "com.mysql.jdbc.Driver"
+  jdbcUrl: "jdbc:mysql://joaoborges-laptop.ca.com:3306/ssg"
+  user: "gateway"
+  passwordRef: "gateway"
+  minimumPoolSize: 10
+  maximumPoolSize: 15
+  properties:
+    useSSL: "false"

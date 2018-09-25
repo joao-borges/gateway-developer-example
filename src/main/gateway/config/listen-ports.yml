@@ -1,0 +1,70 @@
+Custom HTTPS Port:
+  protocol: "HTTPS"
+  port: 20000
+  enabledFeatures:
+  - "Node Control"
+  - "Browser-based administration"
+  - "Built-in services"
+  - "Inter-Node Communication"
+  - "Policy Manager access"
+  - "Published service message input"
+  tlsSettings:
+    clientAuthentication: "NONE"
+    enabledVersions:
+    - "TLSv1"
+    - "TLSv1.2"
+    - "TLSv1.1"
+    enabledCipherSuites:
+    - "TLS_RSA_WITH_AES_128_CBC_SHA256"
+    - "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384"
+    - "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA"
+    - "TLS_RSA_WITH_AES_128_GCM_SHA256"
+    - "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256"
+    - "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256"
+    - "TLS_RSA_WITH_AES_256_GCM_SHA384"
+    - "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384"
+    - "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
+    - "TLS_RSA_WITH_AES_256_CBC_SHA"
+    - "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256"
+    - "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384"
+    - "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384"
+    - "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256"
+    - "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256"
+    - "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA"
+    - "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA"
+    - "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384"
+    - "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384"
+    - "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256"
+    - "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA"
+    - "TLS_RSA_WITH_AES_256_CBC_SHA256"
+    - "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384"
+    - "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+    - "TLS_DHE_RSA_WITH_AES_256_CBC_SHA256"
+    - "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA"
+    - "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256"
+    - "TLS_DHE_RSA_WITH_AES_256_CBC_SHA"
+    - "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256"
+    - "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA"
+    - "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
+    - "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA"
+    - "TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256"
+    - "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384"
+    - "TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384"
+    properties:
+      usesTLS: true
+  properties:
+    threadPoolSize: "20"
+    useExtendedFtpCommandSet: "false"
+    Key: "Value"
+Custom HTTP Port:
+  protocol: "HTTP"
+  port: 10000
+  enabledFeatures:
+  - "Policy download service"
+  - "SNMP Query service"
+  - "Ping service"
+  - "WS-Trust security token service"
+  - "WSDL download service"
+  - "Published service message input"
+  properties:
+    useExtendedFtpCommandSet: "false"

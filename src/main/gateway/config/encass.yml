@@ -1,11 +1,11 @@
 gateway-solution/encass-policy.xml:
   arguments:
-  - name: "hello"
-    type: "string"
   - name: "hello-again"
     type: "message"
-  results:
-  - name: "goodbye"
+  - name: "hello"
     type: "string"
+  results:
   - name: "goodbye-again"
     type: "message"
+  - name: "goodbye"
+    type: "string"
