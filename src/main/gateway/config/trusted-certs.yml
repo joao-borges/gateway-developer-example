@@ -1,1 +1,27 @@
-{}
+www.amazon.com:
+  verifyHostname: false
+  trustedForSsl: false
+  trustedAsSamlAttestingEntity: false
+  trustAnchor: false
+  revocationCheckingEnabled: false
+  trustedForSigningClientCerts: false
+  trustedForSigningServerCerts: false
+  trustedAsSamlIssuer: false
+'*.uol.com.br':
+  verifyHostname: false
+  trustedForSsl: false
+  trustedAsSamlAttestingEntity: false
+  trustAnchor: false
+  revocationCheckingEnabled: false
+  trustedForSigningClientCerts: false
+  trustedForSigningServerCerts: false
+  trustedAsSamlIssuer: false
+www.google.com:
+  verifyHostname: false
+  trustedForSsl: false
+  trustedAsSamlAttestingEntity: false
+  trustAnchor: false
+  revocationCheckingEnabled: false
+  trustedForSigningClientCerts: false
+  trustedForSigningServerCerts: false
+  trustedAsSamlIssuer: false

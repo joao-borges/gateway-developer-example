@@ -68,3 +68,12 @@ Custom HTTP Port:
   - "Published service message input"
   properties:
     useExtendedFtpCommandSet: "false"
+FTP:
+  protocol: "FTP"
+  port: 55555
+  enabledFeatures:
+  - "Published service message input"
+  properties:
+    portRangeCount: "100"
+    portRangeStart: "55556"
+    useExtendedFtpCommandSet: "false"

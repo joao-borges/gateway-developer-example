@@ -8,13 +8,16 @@ buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
+        flatDir {
+            dirs "lib"
+        }
         maven {
             url "https://plugins.gradle.org/m2/"
         }
     }
     dependencies {
-        classpath "com.ca.apim.gateway:gateway-export-plugin:0.5.12-SNAPSHOT"
-        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.5.12-SNAPSHOT"
+        classpath "com.ca.apim.gateway:gateway-export-plugin:0.5.14-SNAPSHOT"
+        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.6.1-SNAPSHOT"
     }
 }
 
@@ -31,6 +34,8 @@ GatewayConnection {
 }
 
 repositories {
+    mavenLocal()
+    mavenCentral()
     flatDir {
         dirs "lib"
     }
