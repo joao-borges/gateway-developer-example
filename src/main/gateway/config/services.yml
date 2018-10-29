@@ -1,21 +1,24 @@
-gateway-solution/another-service.xml:
+gateway-solution/another-service:
   url: "/another-service-example"
+  policy: "gateway-solution/another-service.xml"
   httpMethods:
   - "DELETE"
   - "POST"
   - "GET"
   - "PUT"
   properties: {}
-gateway-solution/db-service.xml:
+gateway-solution/db-service:
   url: "/db-service"
+  policy: "gateway-solution/db-service.xml"
   httpMethods:
   - "DELETE"
   - "POST"
   - "GET"
   - "PUT"
   properties: {}
-gateway-solution/my-gateway-api.xml:
+gateway-solution/my-gateway-api:
   url: "/example"
+  policy: "gateway-solution/my-gateway-api.xml"
   httpMethods:
   - "DELETE"
   - "POST"

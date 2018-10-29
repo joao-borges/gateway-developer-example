@@ -9,3 +9,4 @@ gateway-solution/encass-policy.xml:
     type: "string"
   - name: "goodbye-again"
     type: "message"
+  guid:

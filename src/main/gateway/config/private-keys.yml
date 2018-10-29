@@ -1,7 +1,6 @@
 borjo04:
-  keystore: "Software DB"
   algorithm: "RSA"
+  keyPassword: ""
 test:
-  keystore: "Software DB"
   algorithm: "EC"
-
+  keyPassword: ""

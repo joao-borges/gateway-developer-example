@@ -6,7 +6,7 @@ version: '3.4'
 services:
   gateway-dev:
     hostname: gateway-dev
-    image: caapim/gateway:9.3.00
+    image: isl-dsdc.ca.com:5000/apim-gateway/gateway-enterprise:9.4.00
     ports:
       - "8080:8080"
       - "8443:8443"
@@ -18,12 +18,14 @@ services:
     volumes:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
       - ./build/gateway/gateway-developer-example-0.5.00.gw7:/opt/docker/rc.d/gateway-developer-example-0.5.00.gw7
-      - ./src/main/gateway/config:/opt/SecureSpan/Gateway/node/default/env
     secrets:
       - source: license
         target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
+      - source: privateKeys
+        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/env/privateKeys
     environment:
 #      ENV_DEBUG: "true"
+#      ENV_DEBUG_PORT: 65535
       ACCEPT_LICENSE: "true"
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
@@ -31,14 +33,12 @@ services:
       # passwords
       ENV.PASSWORD.gateway: "7layer"
       # keystore properties
-      ENV.PRIVATE_KEYS.PATH: "/opt/SecureSpan/Gateway/node/default/env/privateKeys"
-      ENV.PRIVATE_KEY_PASSWORD.borjo04: ""
-      ENV.PRIVATE_KEY.borjo04: '{ "algorithm": "RSA" }'
-      ENV.PRIVATE_KEY_PASSWORD.test: ""
-      ENV.PRIVATE_KEY.test: '{ "algorithm": "EC" }'
+      ENV.PRIVATE_KEY.borjo04: '{ "algorithm": "RSA", "keyPassword": "" }'
+      ENV.PRIVATE_KEY.test: '{ "algorithm": "EC", "keyPassword": "" }'
       # ClusterProps
-      ENV.PROPERTY.log_levels: "com.l7tech.server.policy.level = FINEST
-                                com.hazelcast.level = OFF"
+      ENV.PROPERTY.log_levels: |-
+        com.l7tech.server.policy.level = FINEST
+        com.hazelcast.level = OFF
       # JDBC
       ENV.JDBC_CONNECTION.MySQL: '{
        "driverClass": "com.mysql.jdbc.Driver",
@@ -51,6 +51,63 @@ services:
          "useSSL": "false"
        }
      }'
+      # Cassandras
+      ENV.CASSANDRA_CONNECTION.Test: '{
+                                      "keyspace": "Test",
+                                      "contactPoint": "Test",
+                                      "port": 9042,
+                                      "username": "test",
+                                      "storedPasswordName": "gateway",
+                                      "compression": "LZ4",
+                                      "ssl": true,
+                                      "tlsCiphers": [
+                                        "TLS_RSA_WITH_AES_128_CBC_SHA256",
+                                        "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
+                                        "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA",
+                                        "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                                        "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256",
+                                        "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256",
+                                        "TLS_RSA_WITH_AES_256_GCM_SHA384",
+                                        "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384",
+                                        "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                                        "TLS_RSA_WITH_AES_256_CBC_SHA",
+                                        "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256",
+                                        "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+                                        "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384",
+                                        "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+                                        "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+                                        "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA",
+                                        "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
+                                        "TLS_RSA_WITH_AES_128_CBC_SHA",
+                                        "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384",
+                                        "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256",
+                                        "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+                                        "TLS_RSA_WITH_AES_256_CBC_SHA256",
+                                        "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                                        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                                        "TLS_DHE_RSA_WITH_AES_256_CBC_SHA256",
+                                        "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+                                        "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                                        "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+                                        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                                        "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
+                                        "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+                                        "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                                        "TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256",
+                                        "TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384"
+                                      ],
+                                      "properties": {
+                                        "keepAlive": "true"
+                                      }
+                                    }'
+      ENV.CASSANDRA_CONNECTION.Test2: '{
+                                        "keyspace": "",
+                                         "contactPoint": "Test2",
+                                         "port": 9045,
+                                         "username": "",
+                                         "compression": "NONE",
+                                         "ssl": false
+                                         }'
       # Certs
       ENV.CERTIFICATE_FILE.www.amazon.com.pem: |-
         -----BEGIN CERTIFICATE-----
@@ -177,3 +234,5 @@ services:
 secrets:
   license:
     file: ./docker/license.xml
+  privateKeys:
+    file: ./src/main/gateway/config/privateKeys
