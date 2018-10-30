@@ -1,0 +1,12 @@
+'[Internal Audit Sink Policy]':
+  path: "gateway-solution/audit-policies/[Internal Audit Sink Policy].xml"
+  tag: "audit-sink"
+Audit Filter Policy:
+  path: "gateway-solution/audit-policies/Audit Filter Policy.xml"
+  tag: "audit-message-filter"
+'[Internal Audit Lookup Policy]':
+  path: "gateway-solution/audit-policies/[Internal Audit Lookup Policy].xml"
+  tag: "audit-lookup"
+Audit Viewer Policy:
+  path: "gateway-solution/audit-policies/Audit Viewer Policy.xml"
+  tag: "audit-viewer"

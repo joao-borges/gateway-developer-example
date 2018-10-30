@@ -1,0 +1,6 @@
+global-completed-policy:
+  path: "gateway-solution/global-policies/global-completed-policy.xml"
+  tag: "message-completed"
+global-received-policy:
+  path: "gateway-solution/global-policies/global-received-policy.xml"
+  tag: "message-received"
