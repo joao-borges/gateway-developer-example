@@ -3,6 +3,6 @@
         <L7p:Include>
             <L7p:PolicyGuid policyPath="my-bundle/my-bundle-extension.xml"/>
         </L7p:Include>
-        <L7p:Encapsulated policyPath="my-bundle/my-bundle-extension.xml"/>
+        <L7p:Encapsulated encassName="my-bundle-extension"/>
     </wsp:All>
 </wsp:Policy>
