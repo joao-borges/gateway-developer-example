@@ -1,5 +1,8 @@
 <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy" xmlns:L7p="http://www.layer7tech.com/ws/policy">
     <wsp:All wsp:Usage="Required">
+        <L7p:Authentication>
+            <L7p:IdentityProviderOid goidValue="b4c58849945d863b2560d8eecb8281a7"/>
+        </L7p:Authentication>
         <L7p:JdbcQuery>
             <L7p:ConnectionName stringValue="MySQL"/>
             <L7p:ConvertVariablesToStrings booleanValue="false"/>

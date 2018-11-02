@@ -1,0 +1,8 @@
+Test:
+  policy: "gateway-solution/policy-backed-service/a-policy-backed-service.xml"
+  isOneNode: false
+  jobType: "Recurring"
+  jobStatus: "Scheduled"
+  cronExpression: "* * * ? * 2,3,4,5,6"
+  shouldExecuteOnCreate: false
+  properties: {}
