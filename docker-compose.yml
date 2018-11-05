@@ -231,6 +231,19 @@ services:
         "trustedForSigningServerCerts": false,
         "trustedAsSamlIssuer": false
       }'
+      ENV.IDENTITY_PROVIDER.Tacoma MSAD: '{
+                                              "type": "BIND_ONLY_LDAP",
+                                              "properties": {
+                                              },
+                                              "identityProviderDetail": {
+                                                "serverUrls": [
+                                                  "ldaps://10.7.34.21:636"
+                                                ],
+                                                "useSslClientAuthentication": true,
+                                                "bindPatternPrefix": "",
+                                                "bindPatternSuffix": ""
+                                              }
+                                            }'
 secrets:
   license:
     file: ./docker/license.xml
