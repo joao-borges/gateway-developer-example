@@ -3,8 +3,10 @@ encass-policy:
   arguments:
   - name: "hello"
     type: "string"
+    requireExplicit: true
   - name: "hello-again"
     type: "message"
+    requireExplicit: false
   results:
   - name: "goodbye"
     type: "string"
