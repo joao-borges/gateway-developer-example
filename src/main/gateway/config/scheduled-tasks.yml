@@ -1,5 +1,5 @@
 Test:
-  policy: "gateway-solution/policy-backed-service/a-policy-backed-service.xml"
+  policy: "gateway-solution/policy-backed-service/a-policy-backed-service"
   isOneNode: false
   jobType: "Recurring"
   jobStatus: "Scheduled"

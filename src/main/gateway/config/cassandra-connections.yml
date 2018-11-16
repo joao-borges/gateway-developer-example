@@ -50,3 +50,4 @@ Test2:
   username: ""
   compression: "NONE"
   ssl: false
+  properties: {}

@@ -10,7 +10,7 @@
             <L7p:ResponseContentType stringValue="text/json; charset=UTF-8"/>
         </L7p:HardcodedResponse>
         <L7p:Include>
-            <L7p:PolicyGuid policyPath="gateway-solution/example-policy-include.xml"/>
+            <L7p:PolicyGuid policyPath="gateway-solution/example-policy-include"/>
         </L7p:Include>
     </wsp:All>
 </wsp:Policy>

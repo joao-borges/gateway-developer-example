@@ -1,6 +1,6 @@
 borjo04:
+  keystore: "Generic"
   algorithm: "RSA"
-  keyPassword: ""
 test:
+  keystore: "Generic"
   algorithm: "EC"
-  keyPassword: ""

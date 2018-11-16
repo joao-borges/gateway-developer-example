@@ -1,10 +1,10 @@
 background-task-service:
   interfaceName: "com.l7tech.objectmodel.polback.BackgroundTask"
   operations:
-  - policy: "gateway-solution/policy-backed-service/a-policy-backed-service.xml"
+  - policy: "gateway-solution/policy-backed-service/a-policy-backed-service"
     operationName: "run"
 Metrics:
   interfaceName: "com.l7tech.external.assertions.pbsmel.server.ServiceMetricsProcessor"
   operations:
-  - policy: "gateway-solution/policy-backed-service/Metrics.xml"
+  - policy: "gateway-solution/policy-backed-service/Metrics"
     operationName: "process"

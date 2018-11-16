@@ -16,8 +16,8 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.ca.apim.gateway:gateway-export-plugin:0.6.30-SNAPSHOT"
-        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.6.30-SNAPSHOT"
+        classpath "com.ca.apim.gateway:gateway-export-plugin:0.6.34-SNAPSHOT"
+        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.6.34-SNAPSHOT"
     }
 }
 
@@ -31,6 +31,12 @@ version '0.5.00'
 GatewayConnection {
     url = 'https://localhost:8443/restman'
     folderPath = '/gateway-solution'
+}
+
+GatewayExportConfig {
+    exportEntities = [
+            listenPorts: []
+    ]
 }
 
 repositories {

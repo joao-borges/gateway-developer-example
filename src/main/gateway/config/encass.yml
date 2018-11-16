@@ -1,5 +1,5 @@
 encass-policy:
-  policy: "gateway-solution/encass-policy.xml"
+  policy: "gateway-solution/encass-policy"
   arguments:
   - name: "hello"
     type: "string"
