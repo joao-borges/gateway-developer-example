@@ -10,6 +10,7 @@
 /out/
 .DS_Store
 .java-version
+repo
 
 # Ignore the license out so that it is not accidentally committed.
 /license.xml

@@ -6,7 +6,6 @@
 
 buildscript {
     repositories {
-        mavenLocal()
         mavenCentral()
         flatDir {
             dirs "lib"
@@ -16,31 +15,109 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.ca.apim.gateway:gateway-export-plugin:0.6.36-SNAPSHOT"
-        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.6.36-SNAPSHOT"
+        classpath "com.ca.apim.gateway:gateway-export-plugin:0.6.62"
+        classpath "com.ca.apim.gateway:gateway-import-plugin:0.6.62"
+        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.6.62"
     }
 }
 
 apply plugin: "com.ca.apim.gateway.gateway-developer-plugin"
 apply plugin: "com.ca.apim.gateway.gateway-export-plugin"
+apply plugin: "com.ca.apim.gateway.gateway-import-plugin"
+apply plugin: 'maven'
 
 group 'com.ca.apim.gateway'
 version '0.5.00'
 
 
 GatewayConnection {
-    url = 'https://10.242.45.84:8443/restman'
-    folderPath = '/gateway-solution'
 }
 
 GatewayExportConfig {
+    folderPath = '/gateway-solution'
     exportEntities = [
-            listenPorts: []
+            listenPorts: [ 'DBServicePort' ]
+    ]
+}
+
+GatewaySourceConfig {
+    environmentConfig = [
+            "PASSWORD.gateway": "7layer",
+            "IDENTITY_PROVIDER.Tacoma MSAD": file("./src/main/gateway/config/identity-providers.yml"),
+            "JDBC_CONNECTION.MySQL": file("./src/main/gateway/config/jdbc-connections.yml"),
+            "CASSANDRA_CONNECTION.Test": file("./src/main/gateway/config/cassandra-connections.yml"),
+            "CASSANDRA_CONNECTION.Test2": file("./src/main/gateway/config/cassandra-connections.yml"),
+            "CERTIFICATE_FILE.www.amazon.com.pem": "-----BEGIN CERTIFICATE-----\n" +
+                    "        MIIHDDCCBfSgAwIBAgIQAhzeqxvTxO6V+q3g6pUW1DANBgkqhkiG9w0BAQsFADBE\n" +
+                    "        MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMR4wHAYDVQQDExVE\n" +
+                    "        aWdpQ2VydCBHbG9iYWwgQ0EgRzIwHhcNMTgwNTA0MDAwMDAwWhcNMTkwNTA1MTIw\n" +
+                    "        MDAwWjBoMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UE\n" +
+                    "        BxMHU2VhdHRsZTEZMBcGA1UEChMQQW1hem9uLmNvbSwgSW5jLjEXMBUGA1UEAxMO\n" +
+                    "        d3d3LmFtYXpvbi5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCp\n" +
+                    "        9EqbKYQgp1P/ugG1Hgwqp1MIVi2q1ZN7j8BtfXw1fPfj+TInkc5sFp5svXzgcGSe\n" +
+                    "        49lx+YxhhpTsW2EzTrjRdkuqKnQntbStijdiaRBy0/s6L3Aomaa3B+Na88L/AqUd\n" +
+                    "        nl086UXAi2rljbel7ZeaRVBSIqinBpZC2XCesKaCRJBlCFHfojJUImvAE3xMpCqK\n" +
+                    "        puk0z02alPW/fWJNE8jdMUDv2KRID6TqpE+xBQ1uIiqyyToj8796XJIoLUQvi9rS\n" +
+                    "        30Azw7wQRJX7N1YeeLx221LjP12jd9UEUCKmurwAzo3DNEotE1WhJyGKG0gfpOpC\n" +
+                    "        wEy6jAFNWvUVmQqNjpqnAgMBAAGjggPUMIID0DAfBgNVHSMEGDAWgBQkbist0GqS\n" +
+                    "        UVElaQGqmkemiedAIDAdBgNVHQ4EFgQUmLGgnZqEj8YaplF5mz8srfbNx24wggEN\n" +
+                    "        BgNVHREEggEEMIIBAIISaHVkZGxlcy5hbWF6b24uY29tgiFidWNrZXllLXJldGFp\n" +
+                    "        bC13ZWJzaXRlLmFtYXpvbi5jb22CFW9yaWdpbi13d3cuYW1hem9uLmNvbYINeXAu\n" +
+                    "        YW1hem9uLmNvbYIMd3d3LmFtem4uY29tgg53d3cuYW1hem9uLmNvbYINdXMuYW1h\n" +
+                    "        em9uLmNvbYIRdWVkYXRhLmFtYXpvbi5jb22CEWlwaG9uZS5hbWF6b24uY29tgg9o\n" +
+                    "        b21lLmFtYXpvbi5jb22CFGNvcnBvcmF0ZS5hbWF6b24uY29tghFidXlib3guYW1h\n" +
+                    "        em9uLmNvbYIIYW16bi5jb22CCmFtYXpvbi5jb20wDgYDVR0PAQH/BAQDAgWgMB0G\n" +
+                    "        A1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjB3BgNVHR8EcDBuMDWgM6Axhi9o\n" +
+                    "        dHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9iYWxDQUcyLmNybDA1\n" +
+                    "        oDOgMYYvaHR0cDovL2NybDQuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0R2xvYmFsQ0FH\n" +
+                    "        Mi5jcmwwTAYDVR0gBEUwQzA3BglghkgBhv1sAQEwKjAoBggrBgEFBQcCARYcaHR0\n" +
+                    "        cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQUzAIBgZngQwBAgIwdAYIKwYBBQUHAQEE\n" +
+                    "        aDBmMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wPgYIKwYB\n" +
+                    "        BQUHMAKGMmh0dHA6Ly9jYWNlcnRzLmRpZ2ljZXJ0LmNvbS9EaWdpQ2VydEdsb2Jh\n" +
+                    "        bENBRzIuY3J0MAkGA1UdEwQCMAAwggEEBgorBgEEAdZ5AgQCBIH1BIHyAPAAdgC7\n" +
+                    "        2d+8H4pxtZOUI5eqkntHOFeVCqtS6BqQlmQ2jh7RhQAAAWMtaS4dAAAEAwBHMEUC\n" +
+                    "        IQDAlE7F6+zzTPVU7+pC17eEkW59ImwezrE+ZMPmjq1buQIgIis/d1/aQ+3g1vEA\n" +
+                    "        ArJ/LLq3WpFF7mYWzWZ2ULRtE9cAdgBvU3asMfAxGdiZAKRRFf93FRwR2QLBACkG\n" +
+                    "        jbIImjfZEwAAAWMtaS67AAAEAwBHMEUCIEDLDiFDyAWdGuSZHxl4XtrTURSVpcXo\n" +
+                    "        jS1lx9+Uokh/AiEArG385Q/IJc4FZLBJYY+alh3bEtNJx6Mz3KfuerqGrOAwDQYJ\n" +
+                    "        KoZIhvcNAQELBQADggEBAGApJnFCMXkJz9ajWKLX0NlfpHKuOwnP1eYfQY75Eh2h\n" +
+                    "        oVPCUlCZsQCvJuH7o/8NCOPpv13VFjGVpdygugxvmAVr9ZgPWvucgVS0QFqUvNkV\n" +
+                    "        FqmJX2QwOtam61ZMBqklOhEO1e6nXvfyv8c+BVedORMX3gDJUojWWZF1oZQ4pLpu\n" +
+                    "        TeaYUkWqRA1merQ4D4RxMZY9kmSdPwXZ5cMHkzW94w8PIiwBOqqt5pv9tVYZv1rE\n" +
+                    "        baHKoyG95oVi/xZ9CduqBM1gTZxMgfl2habJ/IsseQAgwb7p/PQZq1lUec13SIOm\n" +
+                    "        9cgDKMjzndb/xnOdbed/IfEPjMovmfUVPnqJ80pqZ10=\n" +
+                    "        -----END CERTIFICATE-----",
+            "CERTIFICATE.www.amazon.com": "{\n" +
+                    "        \"verifyHostname\": false,\n" +
+                    "        \"trustedForSsl\": false,\n" +
+                    "        \"trustedAsSamlAttestingEntity\": false,\n" +
+                    "        \"trustAnchor\": false,\n" +
+                    "        \"revocationCheckingEnabled\": false,\n" +
+                    "        \"trustedForSigningClientCerts\": false,\n" +
+                    "        \"trustedForSigningServerCerts\": false,\n" +
+                    "        \"trustedAsSamlIssuer\": false\n" +
+                    "      }",
+            "CERTIFICATE_FILE.*.uol.com.br.pem": file("./src/main/gateway/config/certificates/*.uol.com.br.pem"),
+            "CERTIFICATE.*.uol.com.br": file("./src/main/gateway/config/trusted-certs.yml"),
+            "CERTIFICATE_FILE.www.google.com.pem": file("./src/main/gateway/config/certificates/www.google.com.pem"),
+            "CERTIFICATE.www.google.com": file("./src/main/gateway/config/trusted-certs.yml"),
+            "STATIC_PROPERTY.gateway.log_levels":  "com.l7tech.server.policy.level = FINEST\n" +
+                                    "com.hazelcast.level = OFF",
+            "LISTEN_PORT.DBServicePort": "{\n" +
+                    "                                     \"protocol\": \"HTTP\",\n" +
+                    "                                     \"port\": 32323,\n" +
+                    "                                     \"enabledFeatures\": [\n" +
+                    "                                     \"Published service message input\"\n" +
+                    "                                     ],\n" +
+                    "                                     \"properties\": {\n" +
+                    "                                     \"useExtendedFtpCommandSet\": \"false\"\n" +
+                    "                                     },\n" +
+                    "                                     \"targetServiceReference\": \"gateway-solution/db-service\"\n" +
+                    "                                  }"
     ]
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
     flatDir {
         dirs "lib"
@@ -49,4 +126,33 @@ repositories {
 
 dependencies {
     bundle group: 'my-bundle', name: 'my-bundle', version: '1.0.00', ext: 'bundle'
+    assertion group: "com.l7tech", name: "EncodeDecodeAssertion", version: "9.4.00", ext: "aar"
+    assertion group: "com.l7tech", name: "CassandraAssertion", version: "9.4.00", ext: "aar"
+    assertion group: "com.l7tech", name: "JdbcQueryAssertion", version: "9.4.00", ext: "aar"
+    assertion group: "com.ca.apim.gateway.extension", name: "RemoteCacheAssertion", version: "1.3.1", ext: "aar"
+    customassertion group: "DelayAssertion-sdk80", name: "DelayAssertion-sdk80", version: "1.1-729"
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://$project.rootDir/repo")
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = '4.10'
+}
+
+// this set the input for the import-bundle task with the output of the build-full-bundle task
+//tasks.getByName("import-bundle").dependsOn("build-full-bundle")
+project.afterEvaluate {
+    tasks.getByName("import-bundle").importFile = tasks.getByName("build-full-bundle").outputBundle
+}
+
+task showClasspath {
+    doLast {
+        buildscript.configurations.classpath.each { println it.name }
+    }
 }

@@ -12,3 +12,5 @@ encass-policy:
     type: "string"
   - name: "goodbye-again"
     type: "message"
+  properties:
+    paletteFolder: "internalAssertions"

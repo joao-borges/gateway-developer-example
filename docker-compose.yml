@@ -6,7 +6,7 @@ version: '3.4'
 services:
   gateway-dev:
     hostname: gateway-dev
-    image: isl-dsdc.ca.com:5000/apim-gateway/gateway-enterprise:9.4.00
+    image: isl-dsdc.ca.com:5001/apim-gateway/gateway-base:9.4.00
     ports:
       - "8080:8080"
       - "8443:8443"
@@ -18,11 +18,21 @@ services:
     volumes:
       - /opt/SecureSpan/Gateway/node/default/etc/bootstrap/services/restman
       - ./build/gateway/gateway-developer-example-0.5.00.gw7:/opt/docker/rc.d/gateway-developer-example-0.5.00.gw7
+
+# -- mount for auto environment provisioning
+#      - ./src/main/gateway/config:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/env
+
+# -- mount for specific environment provisioning
+#      - ./src/main/gateway/config/certificates:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/certificates
+#      - ./src/main/gateway/config/jdbc-connections.yml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/jdbc-connections.yml
+#      - ./src/main/gateway/config/cassandra-connections.yml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/cassandra-connections.yml
+#      - ./src/main/gateway/config/trusted-certs.yml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/trusted-certs.yml
+#      - ./src/main/gateway/config/identity-providers.yml:/opt/SecureSpan/Gateway/node/default/etc/bootstrap/identity-providers.yml
     secrets:
       - source: license
         target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/license/license.xml
       - source: privateKeys
-        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/env/privateKeys
+        target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/env/config/privateKeys
     environment:
 #      ENV_DEBUG: "true"
 #      ENV_DEBUG_PORT: 65535
@@ -36,78 +46,97 @@ services:
       ENV.PRIVATE_KEY.borjo04: '{ "algorithm": "RSA", "keyPassword": "" }'
       ENV.PRIVATE_KEY.test: '{ "algorithm": "EC", "keyPassword": "" }'
       # ClusterProps
-      ENV.PROPERTY.log_levels: |-
+      ENV.PROPERTY.gateway.log_levels: |-
         com.l7tech.server.policy.level = FINEST
         com.hazelcast.level = OFF
+
+# -- environment as files
+
+#      # JDBC
+#      ENV.FILE.JDBC_CONNECTION.MySQL: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/jdbc-connections.yml"
+#      # Cassandras
+#      ENV.FILE.CASSANDRA_CONNECTION.Test: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/cassandra-connections.yml"
+#      ENV.FILE.CASSANDRA_CONNECTION.Test2: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/cassandra-connections.yml"
+#      # Certs
+#      ENV.FILE.CERTIFICATE_FILE.www.amazon.com.pem: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/certificates/www.amazon.com.pem"
+#      ENV.FILE.CERTIFICATE.www.amazon.com: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/trusted-certs.yml"
+#      ENV.FILE.CERTIFICATE_FILE.*.uol.com.br.pem: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/certificates/*.uol.com.br.pem"
+#      ENV.FILE.CERTIFICATE.*.uol.com.br: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/trusted-certs.yml"
+#      ENV.FILE.CERTIFICATE_FILE.www.google.com.pem: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/certificates/www.google.com.pem"
+#      ENV.FILE.CERTIFICATE.www.google.com: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/trusted-certs.yml"
+#      ENV.FILE.IDENTITY_PROVIDER.Tacoma MSAD: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/identity-providers.yml"
+
+# -- environment provided directly here
+
       # JDBC
       ENV.JDBC_CONNECTION.MySQL: '{
-       "driverClass": "com.mysql.jdbc.Driver",
-       "jdbcUrl": "jdbc:mysql://joaoborges-laptop.ca.com:3306/ssg",
-       "user": "gateway",
-       "passwordRef": "gateway",
-       "minimumPoolSize": 10,
-       "maximumPoolSize": 15,
-       "properties": {
-         "useSSL": "false"
-       }
-     }'
+           "driverClass": "com.mysql.jdbc.Driver",
+           "jdbcUrl": "jdbc:mysql://joaoborges-laptop.ca.com:3306/ssg",
+           "user": "gateway",
+           "passwordRef": "gateway",
+           "minimumPoolSize": 10,
+           "maximumPoolSize": 15,
+           "properties": {
+             "useSSL": "false"
+           }
+         }'
       # Cassandras
       ENV.CASSANDRA_CONNECTION.Test: '{
-                                      "keyspace": "Test",
-                                      "contactPoint": "Test",
-                                      "port": 9042,
-                                      "username": "test",
-                                      "storedPasswordName": "gateway",
-                                      "compression": "LZ4",
-                                      "ssl": true,
-                                      "tlsCiphers": [
-                                        "TLS_RSA_WITH_AES_128_CBC_SHA256",
-                                        "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
-                                        "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA",
-                                        "TLS_RSA_WITH_AES_128_GCM_SHA256",
-                                        "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256",
-                                        "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256",
-                                        "TLS_RSA_WITH_AES_256_GCM_SHA384",
-                                        "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384",
-                                        "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
-                                        "TLS_RSA_WITH_AES_256_CBC_SHA",
-                                        "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256",
-                                        "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
-                                        "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384",
-                                        "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
-                                        "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
-                                        "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA",
-                                        "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
-                                        "TLS_RSA_WITH_AES_128_CBC_SHA",
-                                        "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384",
-                                        "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256",
-                                        "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
-                                        "TLS_RSA_WITH_AES_256_CBC_SHA256",
-                                        "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
-                                        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
-                                        "TLS_DHE_RSA_WITH_AES_256_CBC_SHA256",
-                                        "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
-                                        "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
-                                        "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
-                                        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
-                                        "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
-                                        "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
-                                        "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
-                                        "TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256",
-                                        "TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384"
-                                      ],
-                                      "properties": {
-                                        "keepAlive": "true"
-                                      }
-                                    }'
+                                          "keyspace": "Test",
+                                          "contactPoint": "Test",
+                                          "port": 9042,
+                                          "username": "test",
+                                          "storedPasswordName": "gateway",
+                                          "compression": "LZ4",
+                                          "ssl": true,
+                                          "tlsCiphers": [
+                                            "TLS_RSA_WITH_AES_128_CBC_SHA256",
+                                            "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384",
+                                            "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA",
+                                            "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                                            "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256",
+                                            "TLS_DHE_RSA_WITH_AES_128_CBC_SHA256",
+                                            "TLS_RSA_WITH_AES_256_GCM_SHA384",
+                                            "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384",
+                                            "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                                            "TLS_RSA_WITH_AES_256_CBC_SHA",
+                                            "TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256",
+                                            "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384",
+                                            "TLS_DHE_RSA_WITH_AES_256_GCM_SHA384",
+                                            "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+                                            "TLS_DHE_RSA_WITH_AES_128_GCM_SHA256",
+                                            "TLS_ECDH_RSA_WITH_AES_256_CBC_SHA",
+                                            "TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA",
+                                            "TLS_RSA_WITH_AES_128_CBC_SHA",
+                                            "TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384",
+                                            "TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256",
+                                            "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+                                            "TLS_RSA_WITH_AES_256_CBC_SHA256",
+                                            "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384",
+                                            "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                                            "TLS_DHE_RSA_WITH_AES_256_CBC_SHA256",
+                                            "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+                                            "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+                                            "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+                                            "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                                            "TLS_ECDH_RSA_WITH_AES_128_CBC_SHA",
+                                            "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+                                            "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                                            "TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256",
+                                            "TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384"
+                                          ],
+                                          "properties": {
+                                            "keepAlive": "true"
+                                          }
+                                        }'
       ENV.CASSANDRA_CONNECTION.Test2: '{
-                                        "keyspace": "",
-                                         "contactPoint": "Test2",
-                                         "port": 9045,
-                                         "username": "",
-                                         "compression": "NONE",
-                                         "ssl": false
-                                         }'
+                                            "keyspace": "",
+                                             "contactPoint": "Test2",
+                                             "port": 9045,
+                                             "username": "",
+                                             "compression": "NONE",
+                                             "ssl": false
+                                             }'
       # Certs
       ENV.CERTIFICATE_FILE.www.amazon.com.pem: |-
         -----BEGIN CERTIFICATE-----
@@ -151,15 +180,15 @@ services:
         9cgDKMjzndb/xnOdbed/IfEPjMovmfUVPnqJ80pqZ10=
         -----END CERTIFICATE-----
       ENV.CERTIFICATE.www.amazon.com: '{
-        "verifyHostname": false,
-        "trustedForSsl": false,
-        "trustedAsSamlAttestingEntity": false,
-        "trustAnchor": false,
-        "revocationCheckingEnabled": false,
-        "trustedForSigningClientCerts": false,
-        "trustedForSigningServerCerts": false,
-        "trustedAsSamlIssuer": false
-      }'
+            "verifyHostname": false,
+            "trustedForSsl": false,
+            "trustedAsSamlAttestingEntity": false,
+            "trustAnchor": false,
+            "revocationCheckingEnabled": false,
+            "trustedForSigningClientCerts": false,
+            "trustedForSigningServerCerts": false,
+            "trustedAsSamlIssuer": false
+          }'
       ENV.CERTIFICATE_FILE.*.uol.com.br.pem: |-
         -----BEGIN CERTIFICATE-----
         MIIEWTCCA0GgAwIBAgIQDM77/CvJvYI/2VmdZPpJsjANBgkqhkiG9w0BAQsFADBG
@@ -188,15 +217,15 @@ services:
         9RwtZD3MIkuu5nMqTg==
         -----END CERTIFICATE-----
       ENV.CERTIFICATE.*.uol.com.br: '{
-        "verifyHostname": false,
-        "trustedForSsl": false,
-        "trustedAsSamlAttestingEntity": false,
-        "trustAnchor": false,
-        "revocationCheckingEnabled": false,
-        "trustedForSigningClientCerts": false,
-        "trustedForSigningServerCerts": false,
-        "trustedAsSamlIssuer": false
-      }'
+            "verifyHostname": false,
+            "trustedForSsl": false,
+            "trustedAsSamlAttestingEntity": false,
+            "trustAnchor": false,
+            "revocationCheckingEnabled": false,
+            "trustedForSigningClientCerts": false,
+            "trustedForSigningServerCerts": false,
+            "trustedAsSamlIssuer": false
+          }'
       ENV.CERTIFICATE_FILE.www.google.com.pem: |-
         -----BEGIN CERTIFICATE-----
         MIIDxzCCAq+gAwIBAgIII8pR0+i7kWEwDQYJKoZIhvcNAQELBQAwVDELMAkGA1UE
@@ -222,28 +251,52 @@ services:
         7wBm1tvqBWx7JjE=
         -----END CERTIFICATE-----
       ENV.CERTIFICATE.www.google.com: '{
-        "verifyHostname": false,
-        "trustedForSsl": false,
-        "trustedAsSamlAttestingEntity": false,
-        "trustAnchor": false,
-        "revocationCheckingEnabled": false,
-        "trustedForSigningClientCerts": false,
-        "trustedForSigningServerCerts": false,
-        "trustedAsSamlIssuer": false
-      }'
+            "verifyHostname": false,
+            "trustedForSsl": false,
+            "trustedAsSamlAttestingEntity": false,
+            "trustAnchor": false,
+            "revocationCheckingEnabled": false,
+            "trustedForSigningClientCerts": false,
+            "trustedForSigningServerCerts": false,
+            "trustedAsSamlIssuer": false
+          }'
       ENV.IDENTITY_PROVIDER.Tacoma MSAD: '{
-                                              "type": "BIND_ONLY_LDAP",
-                                              "properties": {
-                                              },
-                                              "identityProviderDetail": {
-                                                "serverUrls": [
-                                                  "ldaps://10.7.34.21:636"
-                                                ],
-                                                "useSslClientAuthentication": true,
-                                                "bindPatternPrefix": "",
-                                                "bindPatternSuffix": ""
-                                              }
-                                            }'
+                                                  "type": "BIND_ONLY_LDAP",
+                                                  "properties": {
+                                                  },
+                                                  "identityProviderDetail": {
+                                                    "serverUrls": [
+                                                      "ldaps://10.7.34.21:636"
+                                                    ],
+                                                    "useSslClientAuthentication": true,
+                                                    "bindPatternPrefix": "",
+                                                    "bindPatternSuffix": ""
+                                                  }
+                                                }'
+      ENV.LISTEN_PORT.DBServicePort: '{
+                                          "protocol": "HTTPS",
+                                          "port": 32323,
+                                          "enabledFeatures": [
+                                            "Published service message input"
+                                          ],
+                                          "targetServiceReference": "gateway-solution/db-service",
+                                          "tlsSettings": {
+                                            "clientAuthentication": "NONE",
+                                            "enabledVersions": [
+                                              "TLSv1",
+                                              "TLSv1.2",
+                                              "TLSv1.1"
+                                            ],
+                                            "enabledCipherSuites": [
+                                              "TLS_RSA_WITH_AES_256_CBC_SHA256",
+                                              "TLS_RSA_WITH_AES_256_GCM_SHA384",
+                                              "TLS_RSA_WITH_AES_256_CBC_SHA"
+                                            ],
+                                            "properties": {
+                                              "usesTLS": true
+                                            }
+                                          }
+                                        }'
 secrets:
   license:
     file: ./docker/license.xml

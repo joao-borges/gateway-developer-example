@@ -77,3 +77,21 @@ FTP:
     portRangeCount: "100"
     portRangeStart: "55556"
     useExtendedFtpCommandSet: "false"
+DBServicePort:
+  protocol: "HTTPS"
+  port: 32323
+  enabledFeatures:
+  - "Published service message input"
+  targetServiceReference: "gateway-solution/db-service"
+  tlsSettings:
+    clientAuthentication: "NONE"
+    enabledVersions:
+    - "TLSv1"
+    - "TLSv1.2"
+    - "TLSv1.1"
+    enabledCipherSuites:
+    - "TLS_RSA_WITH_AES_256_CBC_SHA256"
+    - "TLS_RSA_WITH_AES_256_GCM_SHA384"
+    - "TLS_RSA_WITH_AES_256_CBC_SHA"
+    properties:
+      usesTLS: true
