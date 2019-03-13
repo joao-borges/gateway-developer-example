@@ -1,0 +1,21 @@
+<wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy" xmlns:L7p="http://www.layer7tech.com/ws/policy">
+    <wsp:All wsp:Usage="Required">
+        <L7p:AuditDetailAssertion>
+            <L7p:CustomLoggerSuffix stringValue="websocket"/>
+            <L7p:Detail stringValue="WEBSOCKET"/>
+            <L7p:Level stringValue="WARNING"/>
+            <L7p:LoggingOnly booleanValue="true"/>
+        </L7p:AuditDetailAssertion>
+        <L7p:XMPPOpenServerSession>
+            <L7p:XMPPConnectionId goidValue="9ed5edac32b44a912d1ca2c005d50296"/>
+        </L7p:XMPPOpenServerSession>
+        <L7p:XMPPGetAssociatedSessionId>
+            <L7p:Inbound booleanValue="false"/>
+            <L7p:SessionId stringValue="sid"/>
+            <L7p:VariableName stringValue="sid"/>
+        </L7p:XMPPGetAssociatedSessionId>
+        <L7p:XMPPSendToRemoteHost>
+            <L7p:SessionId stringValue="sid"/>
+        </L7p:XMPPSendToRemoteHost>
+    </wsp:All>
+</wsp:Policy>

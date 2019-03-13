@@ -1,0 +1,19 @@
+<wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy" xmlns:L7p="http://www.layer7tech.com/ws/policy">
+    <wsp:All wsp:Usage="Required">
+        <L7p:Authentication>
+            <L7p:IdentityProviderName stringValue="Tacoma MSAD"/>
+        </L7p:Authentication>
+        <L7p:RemoteCacheStore>
+            <L7p:RemoteCacheGoid goidValue="a9e611102823b66fbbe2b7f7543db2ef"/>
+        </L7p:RemoteCacheStore>
+        <L7p:RemoteCacheLookup>
+            <L7p:RemoteCacheGoid goidValue="a9e611102823b66fbbe2b7f7543db2ef"/>
+        </L7p:RemoteCacheLookup>
+        <L7p:RemoteCacheRemove>
+            <L7p:RemoteCacheGoid goidValue="a9e611102823b66fbbe2b7f7543db2ef"/>
+        </L7p:RemoteCacheRemove>
+        <L7p:HardcodedResponse>
+            <L7p:ResponseBody><![CDATA[OK]]></L7p:ResponseBody>
+        </L7p:HardcodedResponse>
+    </wsp:All>
+</wsp:Policy>

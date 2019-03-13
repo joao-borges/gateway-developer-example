@@ -49,3 +49,21 @@ gateway-solution/soap/PlayerStatsService:
   httpMethods:
   - "POST"
   properties: {}
+gateway-solution/remote-cache-service:
+  url: "/remote-cache-service"
+  policy: "gateway-solution/remote-cache-service"
+  httpMethods:
+  - "DELETE"
+  - "POST"
+  - "GET"
+  - "PUT"
+  properties: {}
+gateway-solution/websocket:
+  url: "/websocket"
+  policy: "gateway-solution/websocket"
+  httpMethods:
+  - "DELETE"
+  - "POST"
+  - "GET"
+  - "PUT"
+  properties: {}

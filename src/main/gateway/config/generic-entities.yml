@@ -1,0 +1,2 @@
+Cache:
+  entityClassName: "com.l7tech.external.assertions.remotecacheassertion.RemoteCacheEntity"

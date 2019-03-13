@@ -10,6 +10,7 @@ Custom HTTPS Port:
   - "Published service message input"
   tlsSettings:
     clientAuthentication: "NONE"
+    privateKey:
     enabledVersions:
     - "TLSv1"
     - "TLSv1.2"
@@ -82,9 +83,9 @@ DBServicePort:
   port: 32323
   enabledFeatures:
   - "Published service message input"
-  targetServiceReference: "gateway-solution/db-service"
   tlsSettings:
     clientAuthentication: "NONE"
+    privateKey:
     enabledVersions:
     - "TLSv1"
     - "TLSv1.2"
@@ -95,3 +96,4 @@ DBServicePort:
     - "TLS_RSA_WITH_AES_256_CBC_SHA"
     properties:
       usesTLS: true
+  targetServiceReference: "gateway-solution/db-service"

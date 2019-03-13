@@ -1,0 +1,60 @@
+{
+  "java" : {
+    "class" : "java.beans.XMLDecoder",
+    "version" : "1.8.0_192",
+    "object" : {
+      "class" : "com.l7tech.external.assertions.remotecacheassertion.RemoteCacheEntity",
+      "id" : "RemoteCacheEntity0",
+      "void" : [ {
+        "property" : "name",
+        "string" : {
+          "value" : "Cache"
+        }
+      }, {
+        "property" : "properties",
+        "void" : [ {
+          "method" : "put",
+          "string" : [ {
+            "value" : "password"
+          }, {
+            "value" : "12345"
+          } ]
+        }, {
+          "method" : "put",
+          "string" : [ {
+            "value" : "servers"
+          }, {
+            "value" : "localhost:12345"
+          } ]
+        }, {
+          "method" : "put",
+          "string" : [ {
+            "value" : "Test"
+          }, {
+            "value" : "1"
+          } ]
+        }, {
+          "method" : "put",
+          "string" : [ {
+            "value" : "isCluster"
+          }, {
+            "value" : "false"
+          } ]
+        } ]
+      }, {
+        "property" : "timeout",
+        "int" : {
+          "value" : "120"
+        }
+      }, {
+        "property" : "type",
+        "string" : {
+          "value" : "redis"
+        }
+      }, {
+        "property" : "valueXml",
+        "string" : { }
+      } ]
+    }
+  }
+}
