@@ -34,8 +34,8 @@ services:
       - source: privateKeys
         target: /opt/SecureSpan/Gateway/node/default/etc/bootstrap/env/config/privateKeys
     environment:
-#      ENV_DEBUG: "true"
-#      ENV_DEBUG_PORT: 65535
+      ENV_DEBUG: "true"
+      ENV_DEBUG_PORT: 65535
       ACCEPT_LICENSE: "true"
       SSG_ADMIN_USERNAME: "admin"
       SSG_ADMIN_PASSWORD: "password"
@@ -49,8 +49,11 @@ services:
       ENV.PROPERTY.gateway.log_levels: |-
         com.l7tech.server.policy.level = FINEST
         com.hazelcast.level = OFF
+      ENV.CONTEXT_VARIABLE_PROPERTY.Properties Service.contextVariableProperty: "context value from env var"
+      ENV.SERVICE_PROPERTY.Properties Service.serviceProperty: "service prop from env var"
+      ENV.PROPERTY.gateway.ENV.globalProperty: "cluster prop from env var"
 
-# -- environment as files
+      # -- environment as files
 
 #      # JDBC
 #      ENV.FILE.JDBC_CONNECTION.MySQL: "/opt/SecureSpan/Gateway/node/default/etc/bootstrap/jdbc-connections.yml"

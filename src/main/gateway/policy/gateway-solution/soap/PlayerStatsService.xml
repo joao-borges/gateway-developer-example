@@ -1,7 +1,7 @@
 <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy" xmlns:L7p="http://www.layer7tech.com/ws/policy">
     <wsp:All wsp:Usage="Required">
         <L7p:HttpRoutingAssertion>
-            <L7p:ProtectedServiceUrl stringValue="http://hugh.l7tech.com:8081/axis/services/PlayerStats"/>
+            <L7p:ProtectedServiceUrl stringValue="http://apim-hugh.lvn.broadcom.net:8081/axis/services/PlayerStats"/>
             <L7p:RequestHeaderRules httpPassthroughRuleSet="included">
                 <L7p:Rules httpPassthroughRules="included">
                     <L7p:item httpPassthroughRule="included">

@@ -1,0 +1,2272 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ns.l7tech.com/2010/04/gateway-management" xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management" elementFormDefault="qualified" version="1.0" targetNamespace="http://ns.l7tech.com/2010/04/gateway-management">
+            
+  <xs:element name="ActiveConnector" type="tns:ActiveConnector"/>
+            
+  <xs:element name="AddAssignmentsContext" type="tns:AddAssignmentsContextType"/>
+            
+  <xs:element name="AssertionSecurityZone" type="tns:AssertionAccessType"/>
+            
+  <xs:element name="AuditConfiguration" type="tns:AuditConfigurationType"/>
+            
+  <xs:element name="BooleanValue" type="tns:BooleanValueType"/>
+            
+  <xs:element name="Bundle" type="tns:Bundle"/>
+            
+  <xs:element name="Bundles" type="tns:Bundles"/>
+            
+  <xs:element name="CassandraConnection" type="tns:CassandraConnectionType"/>
+            
+  <xs:element name="CertificateData" type="tns:CertificateDataType"/>
+            
+  <xs:element name="ClusterProperty" type="tns:ClusterPropertyType"/>
+            
+  <xs:element name="CustomKeyValue" type="tns:CustomKeyValueType"/>
+            
+  <xs:element name="DateValue" type="tns:DateValueType"/>
+            
+  <xs:element name="Dependency" type="tns:dependencyMO"/>
+            
+  <xs:element name="DependencyList" type="tns:dependencyListMO"/>
+            
+  <xs:element name="EmailListener" type="tns:EmailListenerType"/>
+            
+  <xs:element name="EncapsulatedArgument" type="tns:EncapsulatedAssertionArgumentType"/>
+            
+  <xs:element name="EncapsulatedAssertion" type="tns:EncapsulatedAssertionType"/>
+            
+  <xs:element name="EncapsulatedAssertionExportResult" type="tns:EncapsulatedAssertionExportResultType"/>
+            
+  <xs:element name="EncapsulatedAssertionImportResult" type="tns:EncapsulatedAssertionImportResultType"/>
+            
+  <xs:element name="EncapsulatedResult" type="tns:EncapsulatedResultType"/>
+            
+  <xs:element name="EncassImportContext" type="tns:EncassImportContextType"/>
+            
+  <xs:element name="EntityOwnershipDescriptor" type="tns:EntityOwnershipDescriptorType"/>
+            
+  <xs:element name="Error" type="tns:Error"/>
+            
+  <xs:element name="FirewallRule" type="tns:FirewallRuleType"/>
+            
+  <xs:element name="Folder" type="tns:FolderType"/>
+            
+  <xs:element name="FtpConfig" type="tns:AuditFtpConfigType"/>
+            
+  <xs:element name="GenericEntity" type="tns:GenericEntityType"/>
+            
+  <xs:element name="Group" type="tns:GroupType"/>
+            
+  <xs:element name="HttpConfiguration" type="tns:HttpConfigurationType"/>
+            
+  <xs:element name="HttpMapping" type="tns:HttpServiceMappingType"/>
+            
+  <xs:element name="IdentityProvider" type="tns:IdentityProviderType"/>
+            
+  <xs:element name="IntegerValue" type="tns:IntegerValueType"/>
+            
+  <xs:element name="InterfaceTag" type="tns:InterfaceTagType"/>
+            
+  <xs:element name="Item" type="tns:ItemReferenceType"/>
+            
+  <xs:element name="JDBCConnection" type="tns:JDBCConnectionType"/>
+            
+  <xs:element name="JMSDestination" type="tns:JMSDestinationType"/>
+            
+  <xs:element name="Link" type="tns:LinkType"/>
+            
+  <xs:element name="List" type="tns:ItemsListReferenceType"/>
+            
+  <xs:element name="ListenPort" type="tns:ListenPortType"/>
+            
+  <xs:element name="LogSink" type="tns:LogSinkType"/>
+            
+  <xs:element name="LogSinkFilter" type="tns:LogSinkFilterType"/>
+            
+  <xs:element name="LongValue" type="tns:LongValueType"/>
+            
+  <xs:element name="Mapping" type="tns:MappingType"/>
+            
+  <xs:element name="Mappings" type="tns:MappingsType"/>
+            
+  <xs:element name="Policy" type="tns:PolicyType"/>
+            
+  <xs:element name="PolicyAlias" type="tns:PolicyAliasType"/>
+            
+  <xs:element name="PolicyBackedService" type="tns:PolicyBackedServiceType"/>
+            
+  <xs:element name="PolicyBackedServiceOperation" type="tns:PolicyBackedServiceOperationArgumentType"/>
+            
+  <xs:element name="PolicyExportResult" type="tns:PolicyExportResultType"/>
+            
+  <xs:element name="PolicyImportContext" type="tns:PolicyImportContextType"/>
+            
+  <xs:element name="PolicyImportResult" type="tns:PolicyImportResultType"/>
+            
+  <xs:element name="PolicyValidationContext" type="tns:PolicyValidationContextType"/>
+            
+  <xs:element name="PolicyValidationResult" type="tns:PolicyValidationResultType"/>
+            
+  <xs:element name="PolicyVersion" type="tns:PolicyVersionType"/>
+            
+  <xs:element name="PrivateKey" type="tns:PrivateKeyType"/>
+            
+  <xs:element name="PrivateKeyCreationContext" type="tns:PrivateKeyCreationContextType"/>
+            
+  <xs:element name="PrivateKeyExportContext" type="tns:PrivateKeyExportContextType"/>
+            
+  <xs:element name="PrivateKeyExportResult" type="tns:PrivateKeyExportResultType"/>
+            
+  <xs:element name="PrivateKeyGenerateCsrContext" type="tns:PrivateKeyGenerateCsrContextType"/>
+            
+  <xs:element name="PrivateKeyGenerateCsrResult" type="tns:PrivateKeyGenerateCsrResultType"/>
+            
+  <xs:element name="PrivateKeyImportContext" type="tns:PrivateKeyImportContextType"/>
+            
+  <xs:element name="PrivateKeySignCsrResult" type="tns:PrivateKeySignCertResultType"/>
+            
+  <xs:element name="PrivateKeySpecialPurposeContext" type="tns:PrivateKeySpecialPurposeContextType"/>
+            
+  <xs:element name="RemoveAssignmentsContext" type="tns:RemoveAssignmentsContextType"/>
+            
+  <xs:element name="ResourceDocument" type="tns:ResourceDocumentType"/>
+            
+  <xs:element name="ResourceSet" type="tns:ResourceSetType"/>
+            
+  <xs:element name="RevocationCheckingPolicy" type="tns:RevocationCheckingPolicyType"/>
+            
+  <xs:element name="Role" type="tns:RbacRoleType"/>
+            
+  <xs:element name="RoleAssignment" type="tns:RoleAssignmentType"/>
+            
+  <xs:element name="RolePermission" type="tns:RolePermissionType"/>
+            
+  <xs:element name="RolePredicate" type="tns:RolePredicateType"/>
+            
+  <xs:element name="SampleMessage" type="tns:SampleMessageType"/>
+            
+  <xs:element name="ScheduledTask" type="tns:ScheduledTaskType"/>
+            
+  <xs:element name="SecurityZone" type="tns:SecurityZoneType"/>
+            
+  <xs:element name="ServerModuleFile" type="tns:ServerModuleFileType"/>
+            
+  <xs:element name="Service" type="tns:ServiceType"/>
+            
+  <xs:element name="ServiceAlias" type="tns:ServiceAliasType"/>
+            
+  <xs:element name="SiteMinderConfiguration" type="tns:SiteMinderConfigurationType"/>
+            
+  <xs:element name="SoapMapping" type="tns:SoapServiceMappingType"/>
+            
+  <xs:element name="SolutionKit" type="tns:SolutionKitType"/>
+            
+  <xs:element name="StoredPassword" type="tns:StoredPasswordType"/>
+            
+  <xs:element name="StringValue" type="tns:StringValueType"/>
+            
+  <xs:element name="TrustedCertificate" type="tns:TrustedCertificateType"/>
+            
+  <xs:element name="User" type="tns:UserType"/>
+            
+  <xs:element name="Value" type="tns:ValueType"/>
+            
+  <xs:element name="VersionComment" type="tns:VersionCommentType"/>
+            
+  <xs:simpleType name="action">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NewOrExisting"/>
+      <xs:enumeration value="NewOrUpdate"/>
+      <xs:enumeration value="AlwaysCreateNew"/>
+      <xs:enumeration value="Ignore"/>
+      <xs:enumeration value="Delete"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:simpleType name="actionTaken">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UsedExisting"/>
+      <xs:enumeration value="CreatedNew"/>
+      <xs:enumeration value="UpdatedExisting"/>
+      <xs:enumeration value="Ignored"/>
+      <xs:enumeration value="Deleted"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="ActiveConnector">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+          <xs:element name="Type" type="tns:StringPropertyType"/>
+          <xs:element name="HardwiredId" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="AddAssignmentsContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="assignments" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="assignment" type="tns:RoleAssignmentType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="AssertionAccessType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="AssertionDetailType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="position" type="xs:int" use="required"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="AuditConfigurationType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="SinkPolicyReference" type="tns:ReferenceType" minOccurs="0"/>
+          <xs:element name="LookupPolicyReference" type="tns:ReferenceType" minOccurs="0"/>
+          <xs:element name="AlwaysSaveInternal" type="xs:boolean" minOccurs="0"/>
+          <xs:element ref="tns:FtpConfig" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="AuditFtpConfigType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Host" type="xs:string"/>
+          <xs:element name="Port" type="xs:int"/>
+          <xs:element name="Timeout" type="xs:int"/>
+          <xs:element name="User" type="xs:string" minOccurs="0"/>
+          <xs:element name="Password" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Directory" type="xs:string" minOccurs="0"/>
+          <xs:element name="VerifyServerCert" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="Security" type="tns:SecurityTypeType"/>
+          <xs:element name="Enabled" type="xs:boolean"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="BigIntegerPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="BinaryPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:base64Binary">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="BindOnlyLdapIdentityProviderDetailType">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentityProviderDetailType">
+        <xs:sequence>
+          <xs:element name="ServerUrls" type="tns:StringListPropertyType"/>
+          <xs:element name="UseSslClientAuthentication" type="tns:BooleanPropertyType" minOccurs="0"/>
+          <xs:element name="SslKeyReference" type="tns:ReferenceType" minOccurs="0"/>
+          <xs:element name="BindPatternPrefix" type="tns:StringPropertyType"/>
+          <xs:element name="BindPatternSuffix" type="tns:StringPropertyType"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="BooleanPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:boolean">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="BooleanValueType">
+    <xs:simpleContent>
+      <xs:extension base="xs:boolean">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="Bundle">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="References" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:Item" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Mappings" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:Mapping" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DependencyGraph" type="tns:dependencyListMO" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="Bundles">
+    <xs:sequence>
+      <xs:element ref="tns:Bundle" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="CassandraConnectionType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Keyspace" type="xs:string"/>
+          <xs:element name="ContactPoint" type="xs:string"/>
+          <xs:element name="Port" type="xs:string"/>
+          <xs:element name="Username" type="xs:string"/>
+          <xs:element name="PasswordId" type="xs:string" minOccurs="0"/>
+          <xs:element name="Compression" type="xs:string"/>
+          <xs:element name="Ssl" type="xs:boolean"/>
+          <xs:element name="TlsCiphers" type="xs:string" minOccurs="0"/>
+          <xs:element name="Enabled" type="xs:boolean"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="CategoryType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LOG"/>
+      <xs:enumeration value="TRAFFIC"/>
+      <xs:enumeration value="AUDIT"/>
+      <xs:enumeration value="SSPC"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="CertificateDataType">
+    <xs:sequence>
+      <xs:element name="IssuerName" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="SerialNumber" type="tns:BigIntegerPropertyType" minOccurs="0"/>
+      <xs:element name="SubjectName" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="Encoded" type="tns:BinaryPropertyType"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="ClientAuthenticationPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="tns:ClientAuthenticationType">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="ClientAuthenticationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Optional"/>
+      <xs:enumeration value="Required"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="ClusterPropertyType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Value" type="tns:StringPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="CustomKeyValueType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="StoreName" type="tns:StringPropertyType"/>
+          <xs:element name="Key" type="tns:StringPropertyType"/>
+          <xs:element name="Value" type="tns:BinaryPropertyType"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="DateValueType">
+    <xs:restriction base="xs:dateTime"/>
+  </xs:simpleType>
+            
+  <xs:complexType name="dependencyListMO">
+    <xs:sequence>
+      <xs:element name="Options" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Reference" type="tns:dependencyMO" minOccurs="0"/>
+      <xs:element name="Dependencies" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:Dependency" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MissingDependencies" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="MissingDependency" type="tns:dependencyMO" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="dependencyMO">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Id" type="xs:string" minOccurs="0"/>
+      <xs:element name="Type" type="xs:string"/>
+      <xs:element name="Dependencies" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="tns:Dependency" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="EmailListenerType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Active" type="tns:BooleanPropertyType"/>
+          <xs:element name="Hostname" type="tns:StringPropertyType"/>
+          <xs:element name="Port" type="tns:IntegerPropertyType"/>
+          <xs:element name="ServerType" type="tns:EmailServerTypePropertyType"/>
+          <xs:element name="UseSsl" type="tns:BooleanPropertyType"/>
+          <xs:element name="DeleteOnReceive" type="tns:BooleanPropertyType"/>
+          <xs:element name="Username" type="tns:StringPropertyType"/>
+          <xs:element name="Password" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Folder" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="PollInterval" type="tns:IntegerPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="EmailServerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="POP3"/>
+      <xs:enumeration value="IMAP"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:simpleType name="EmailServerTypePropertyType">
+    <xs:restriction base="tns:EmailServerType"/>
+  </xs:simpleType>
+            
+  <xs:complexType name="EncapsulatedArgumentListPropertyType">
+    <xs:sequence>
+      <xs:element name="EncapsulatedAssertionArgument" type="tns:EncapsulatedAssertionArgumentType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="EncapsulatedAssertionArgumentType">
+    <xs:sequence>
+      <xs:element name="Ordinal" type="tns:IntegerPropertyType" minOccurs="0"/>
+      <xs:element name="ArgumentName" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="ArgumentType" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="GuiLabel" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="GuiPrompt" type="tns:BooleanPropertyType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="EncapsulatedAssertionExportResultType">
+    <xs:complexContent>
+      <xs:extension base="tns:PolicyExportResultType">
+        <xs:sequence/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="EncapsulatedAssertionImportResultType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Warnings" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Warning" type="tns:StringPropertyType" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ImportedEncapsulatedAssertion" type="tns:EncapsulatedAssertionType"/>
+          <xs:element name="ImportedPolicyReferences" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ImportedPolicyReference" type="tns:ImportedPolicyReferenceType" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="EncapsulatedAssertionType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Guid" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="PolicyReference" type="tns:ReferenceType" minOccurs="0"/>
+          <xs:element name="EncapsulatedArguments" type="tns:EncapsulatedArgumentListPropertyType" minOccurs="0"/>
+          <xs:element name="EncapsulatedResults" type="tns:EncapsulatedResultListPropertyType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Resources" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="tns:ResourceSet" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="EncapsulatedResultListPropertyType">
+    <xs:sequence>
+      <xs:element name="EncapsulatedAssertionResult" type="tns:EncapsulatedResultType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="EncapsulatedResultType">
+    <xs:sequence>
+      <xs:element name="ResultName" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="ResultType" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="EncassImportContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:PolicyImportContextType">
+        <xs:sequence/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="EntityOwnershipDescriptorType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="EntityId" type="xs:string"/>
+          <xs:element name="EntityType" type="xs:string"/>
+          <xs:element name="ReadOnly" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="VersionStamp" type="xs:long" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="Error">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:string" minOccurs="0"/>
+      <xs:element name="TimeStamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element ref="tns:Link"/>
+      <xs:element name="Detail" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:simpleType name="errorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TargetExists"/>
+      <xs:enumeration value="TargetNotFound"/>
+      <xs:enumeration value="TargetReadOnly"/>
+      <xs:enumeration value="UniqueKeyConflict"/>
+      <xs:enumeration value="CannotReplaceDependency"/>
+      <xs:enumeration value="ImproperMapping"/>
+      <xs:enumeration value="InvalidResource"/>
+      <xs:enumeration value="Unknown"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="ExtensionType">
+    <xs:sequence>
+      <xs:any maxOccurs="unbounded" minOccurs="1" namespace="##targetNamespace" processContents="lax"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="FederatedIdentityProviderDetailType">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentityProviderDetailType">
+        <xs:sequence>
+          <xs:element name="CertificateReferences" type="tns:ReferenceListPropertyType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="FirewallRuleType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+          <xs:element name="Ordinal" type="tns:IntegerPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="FolderType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="folderId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="GenericEntityType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Description" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="EntityClassName" type="tns:StringPropertyType"/>
+          <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+          <xs:element name="ValueXml" type="tns:StringPropertyType"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="GroupType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Description" type="xs:string" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="providerId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="HttpConfigurationOptionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="default"/>
+      <xs:enumeration value="none"/>
+      <xs:enumeration value="custom"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:simpleType name="HttpConfigurationProtocolType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="any"/>
+      <xs:enumeration value="http"/>
+      <xs:enumeration value="https"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="HttpConfigurationType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Host" type="xs:string"/>
+          <xs:element name="Port" type="xs:int" default="0"/>
+          <xs:element name="Protocol" type="tns:HttpConfigurationProtocolType" default="any" minOccurs="0"/>
+          <xs:element name="Path" type="xs:string" minOccurs="0"/>
+          <xs:element name="Username" type="xs:string" minOccurs="0"/>
+          <xs:element name="PasswordId" type="xs:string" minOccurs="0"/>
+          <xs:element name="NtlmHost" type="xs:string" minOccurs="0"/>
+          <xs:element name="NtlmDomain" type="xs:string" minOccurs="0"/>
+          <xs:element name="TlsVersion" type="xs:string" default="ANY" minOccurs="0"/>
+          <xs:element name="TlsKeyUse" type="tns:HttpConfigurationOptionType" default="default" minOccurs="0"/>
+          <xs:element name="TlsKeystoreId" type="xs:string" minOccurs="0"/>
+          <xs:element name="TlsKeystoreAlias" type="xs:string" minOccurs="0"/>
+          <xs:element name="TlsCipherSuites" type="xs:string" minOccurs="0"/>
+          <xs:element name="ConnectTimeout" type="xs:int" default="-1"/>
+          <xs:element name="ReadTimeout" type="xs:int" default="-1"/>
+          <xs:element name="FollowRedirects" type="xs:boolean" default="false"/>
+          <xs:element name="ProxyUse" type="tns:HttpConfigurationOptionType" default="default" minOccurs="0"/>
+          <xs:element name="ProxyConfiguration" type="tns:HttpProxyConfigurationType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="HttpProxyConfigurationType">
+    <xs:sequence>
+      <xs:element name="Host" type="xs:string" minOccurs="0"/>
+      <xs:element name="Port" type="xs:int"/>
+      <xs:element name="Username" type="xs:string" minOccurs="0"/>
+      <xs:element name="PasswordId" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="HttpServiceMappingType">
+    <xs:complexContent>
+      <xs:extension base="tns:ServiceMappingType">
+        <xs:sequence>
+          <xs:element name="UrlPattern" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Verbs" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Verb" type="tns:StringPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="IdentityProviderDetailType" abstract="true">
+    <xs:sequence>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="IdentityProviderExtensionType">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element name="FederatedIdentityProviderDetail" type="tns:FederatedIdentityProviderDetailType"/>
+        <xs:element name="LdapIdentityProviderDetail" type="tns:LdapIdentityProviderDetailType"/>
+        <xs:element name="BindOnlyLdapIdentityProviderDetail" type="tns:BindOnlyLdapIdentityProviderDetailType"/>
+        <xs:element name="PolicyBackedIdentityProviderDetail" type="tns:PolicyBackedIdentityProviderDetailType"/>
+      </xs:choice>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="IdentityProviderType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="IdentityProviderType" type="tns:IdentityProviderTypePropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:IdentityProviderExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="IdentityProviderTypePropertyType">
+    <xs:simpleContent>
+      <xs:extension base="tns:IdentityProviderTypeType">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="IdentityProviderTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Internal"/>
+      <xs:enumeration value="LDAP"/>
+      <xs:enumeration value="Federated"/>
+      <xs:enumeration value="Simple LDAP"/>
+      <xs:enumeration value="Policy-Backed"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="ImportedPolicyReferenceType">
+    <xs:sequence>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="guid" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="referenceId" type="xs:string" use="required"/>
+    <xs:attribute name="referenceType" type="xs:string" use="required"/>
+    <xs:attribute name="type" type="tns:ImportedPolicyReferenceTypeType" use="required"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:simpleType name="ImportedPolicyReferenceTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Created"/>
+      <xs:enumeration value="Mapped"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="IntegerPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:int">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="IntegerValueType">
+    <xs:simpleContent>
+      <xs:extension base="xs:int">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="InterfaceTagType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="AddressPatterns" type="tns:StringListPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ItemReferenceType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Id" type="xs:string" minOccurs="0"/>
+      <xs:element name="Type" type="xs:string"/>
+      <xs:element name="TimeStamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element ref="tns:Link" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Resource" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:ActiveConnector"/>
+              <xs:element ref="tns:AssertionSecurityZone"/>
+              <xs:element ref="tns:TrustedCertificate"/>
+              <xs:element ref="tns:CassandraConnection"/>
+              <xs:element ref="tns:ClusterProperty"/>
+              <xs:element ref="tns:CustomKeyValue"/>
+              <xs:element ref="tns:ResourceDocument"/>
+              <xs:element ref="tns:EmailListener"/>
+              <xs:element ref="tns:EncapsulatedAssertion"/>
+              <xs:element ref="tns:FirewallRule"/>
+              <xs:element ref="tns:Folder"/>
+              <xs:element ref="tns:GenericEntity"/>
+              <xs:element ref="tns:HttpConfiguration"/>
+              <xs:element ref="tns:IdentityProvider"/>
+              <xs:element ref="tns:InterfaceTag"/>
+              <xs:element ref="tns:JDBCConnection"/>
+              <xs:element ref="tns:JMSDestination"/>
+              <xs:element ref="tns:ListenPort"/>
+              <xs:element ref="tns:PolicyAlias"/>
+              <xs:element ref="tns:Policy"/>
+              <xs:element ref="tns:PolicyVersion"/>
+              <xs:element ref="tns:PrivateKey"/>
+              <xs:element ref="tns:PrivateKeyExportResult"/>
+              <xs:element ref="tns:PrivateKeyGenerateCsrResult"/>
+              <xs:element ref="tns:PrivateKeySignCsrResult"/>
+              <xs:element ref="tns:RevocationCheckingPolicy"/>
+              <xs:element ref="tns:Service"/>
+              <xs:element ref="tns:Role"/>
+              <xs:element ref="tns:SampleMessage"/>
+              <xs:element ref="tns:SiteMinderConfiguration"/>
+              <xs:element ref="tns:StoredPassword"/>
+              <xs:element ref="tns:SecurityZone"/>
+              <xs:element ref="tns:ServiceAlias"/>
+              <xs:element ref="tns:DependencyList"/>
+              <xs:element ref="tns:Mappings"/>
+              <xs:element ref="tns:List"/>
+              <xs:element ref="tns:Bundle"/>
+              <xs:element ref="tns:User"/>
+              <xs:element ref="tns:Group"/>
+              <xs:element ref="tns:CertificateData"/>
+              <xs:element ref="tns:LogSink"/>
+              <xs:element ref="tns:ScheduledTask"/>
+              <xs:element ref="tns:ServerModuleFile"/>
+              <xs:element ref="tns:PolicyBackedService"/>
+              <xs:element ref="tns:SolutionKit"/>
+              <xs:element ref="tns:AuditConfiguration"/>
+              <xs:any processContents="lax" namespace="##other"/>
+            </xs:choice>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="ItemsListReferenceType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Id" type="xs:string" minOccurs="0"/>
+      <xs:element name="Type" type="xs:string"/>
+      <xs:element name="TimeStamp" type="xs:dateTime" minOccurs="0"/>
+      <xs:element ref="tns:Link" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="tns:Item" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="JDBCConnectionType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:JdbcExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="JdbcExtensionType">
+    <xs:sequence>
+      <xs:element name="DriverClass" type="tns:StringPropertyType"/>
+      <xs:element name="JdbcUrl" type="tns:StringPropertyType"/>
+      <xs:element name="ConnectionProperties" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="JMSConnectionType">
+    <xs:sequence>
+      <xs:element name="ProviderType" type="tns:JMSProviderTypePropertyType" minOccurs="0"/>
+      <xs:element name="Template" type="tns:BooleanPropertyType" minOccurs="0"/>
+      <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="ContextPropertiesTemplate" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="version" type="xs:int"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="JMSDestinationDetailType">
+    <xs:sequence>
+      <xs:element name="Name" type="tns:StringPropertyType"/>
+      <xs:element name="DestinationName" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="Inbound" type="tns:BooleanPropertyType"/>
+      <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+      <xs:element name="Template" type="tns:BooleanPropertyType" minOccurs="0"/>
+      <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="version" type="xs:int"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="JMSDestinationType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="JMSDestinationDetail" type="tns:JMSDestinationDetailType"/>
+          <xs:element name="JMSConnection" type="tns:JMSConnectionType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="JMSProviderTypePropertyType">
+    <xs:simpleContent>
+      <xs:extension base="tns:JMSProviderTypeType">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="JMSProviderTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TIBCO EMS"/>
+      <xs:enumeration value="WebSphere MQ over LDAP"/>
+      <xs:enumeration value="WebLogic JMS"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="LdapIdentityProviderDetailType">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentityProviderDetailType">
+        <xs:sequence>
+          <xs:element name="SourceType" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="ServerUrls" type="tns:StringListPropertyType"/>
+          <xs:element name="UseSslClientAuthentication" type="tns:BooleanPropertyType" minOccurs="0"/>
+          <xs:element name="SslKeyReference" type="tns:ReferenceType" minOccurs="0"/>
+          <xs:element name="SearchBase" type="tns:StringPropertyType"/>
+          <xs:element name="BindDn" type="tns:StringPropertyType"/>
+          <xs:element name="BindPassword" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Writable" type="tns:BooleanPropertyType" minOccurs="0"/>
+          <xs:element name="WriteBase" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="UserMappings" type="tns:LdapIdentityProviderMappingListPropertyType" minOccurs="0"/>
+          <xs:element name="GroupMappings" type="tns:LdapIdentityProviderMappingListPropertyType" minOccurs="0"/>
+          <xs:element name="SpecifiedAttributes" type="tns:StringListPropertyType" minOccurs="0"/>
+          <xs:element name="NtlmProperties" type="tns:PropertiesMapType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="LdapIdentityProviderMappingListPropertyType">
+    <xs:sequence>
+      <xs:element name="Mapping" type="tns:LdapIdentityProviderMappingType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="LdapIdentityProviderMappingType">
+    <xs:sequence>
+      <xs:element name="ObjectClass" type="tns:StringPropertyType"/>
+      <xs:element name="Mappings" type="tns:PropertiesMapType"/>
+      <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="LinkType">
+    <xs:sequence/>
+    <xs:attribute name="rel" type="xs:string" use="required"/>
+    <xs:attribute name="uri" type="xs:string" use="required"/>
+  </xs:complexType>
+            
+  <xs:complexType name="ListenPortType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+          <xs:element name="Protocol" type="tns:StringPropertyType"/>
+          <xs:element name="Interface" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Port" type="tns:IntegerPropertyType"/>
+          <xs:element name="EnabledFeatures" type="tns:StringListPropertyType"/>
+          <xs:element name="TargetServiceReference" type="tns:ReferenceType" minOccurs="0"/>
+          <xs:element name="TlsSettings" type="tns:TlsSettingsType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="LogSinkFilterType">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:string" minOccurs="0"/>
+      <xs:element name="Values" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="LogSinkType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Description" type="xs:string"/>
+          <xs:element name="Type" type="tns:SinkTypeType"/>
+          <xs:element name="Categories">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Category" type="tns:CategoryType" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Enabled" type="xs:boolean"/>
+          <xs:element name="Severity" type="tns:SeverityThresholdType"/>
+          <xs:element name="SyslogHosts" type="tns:StringListPropertyType" minOccurs="0"/>
+          <xs:element name="Filters">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Filter" type="tns:LogSinkFilterType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="LongValueType">
+    <xs:simpleContent>
+      <xs:extension base="xs:long">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ManagedObjectType" abstract="true">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="version" type="xs:int"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="MappingsType">
+    <xs:sequence>
+      <xs:element ref="tns:Mapping" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="MappingType">
+    <xs:sequence>
+      <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="action" type="tns:action"/>
+    <xs:attribute name="actionTaken" type="tns:actionTaken"/>
+    <xs:attribute name="errorType" type="tns:errorType"/>
+    <xs:attribute name="srcId" type="xs:string"/>
+    <xs:attribute name="srcUri" type="xs:string"/>
+    <xs:attribute name="targetId" type="xs:string"/>
+    <xs:attribute name="targetUri" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+  </xs:complexType>
+            
+  <xs:complexType name="PasswordFormattedType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="bundleKey" type="xs:string"/>
+        <xs:attribute name="format" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyAliasType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="PolicyReference" type="tns:ReferenceType"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="folderId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyBackedIdentityProviderDetailType">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentityProviderDetailType">
+        <xs:sequence>
+          <xs:element name="AuthenticationPolicyId" type="tns:StringPropertyType"/>
+          <xs:element name="DefaultRoleAssignmentId" type="tns:StringPropertyType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyBackedServiceOperationArgumentType">
+    <xs:sequence>
+      <xs:element name="PolicyId" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="OperationName" type="tns:StringPropertyType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyBackedServiceOperationListPropertyType">
+    <xs:sequence>
+      <xs:element ref="tns:PolicyBackedServiceOperation" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyBackedServiceType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="InterfaceName" type="tns:StringPropertyType"/>
+          <xs:element name="PolicyBackedServiceOperations" type="tns:PolicyBackedServiceOperationListPropertyType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyDetailType">
+    <xs:sequence>
+      <xs:element name="Name" type="tns:StringPropertyType"/>
+      <xs:element name="PolicyType" type="tns:PolicyTypePropertyType"/>
+      <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="folderId" type="xs:string"/>
+    <xs:attribute name="guid" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="version" type="xs:int"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyExportResultType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Resource" type="tns:ResourceType"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyImportContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Resource" type="tns:ResourceType"/>
+          <xs:element name="PolicyReferenceInstructions" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PolicyReferenceInstruction" type="tns:PolicyReferenceInstructionType" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyImportResultType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Warnings" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Warning" type="tns:StringPropertyType" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ImportedPolicyReferences" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ImportedPolicyReference" type="tns:ImportedPolicyReferenceType" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyReferenceInstructionType">
+    <xs:sequence>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="mappedName" type="xs:string"/>
+    <xs:attribute name="mappedReferenceId" type="xs:string"/>
+    <xs:attribute name="type" type="tns:PolicyReferenceInstructionTypeType" use="required"/>
+    <xs:attribute name="referenceId" type="xs:string" use="required"/>
+    <xs:attribute name="referenceType" type="xs:string" use="required"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:simpleType name="PolicyReferenceInstructionTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Delete"/>
+      <xs:enumeration value="Ignore"/>
+      <xs:enumeration value="Map"/>
+      <xs:enumeration value="Rename"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="PolicyType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="PolicyDetail" type="tns:PolicyDetailType"/>
+          <xs:element name="Resources">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="tns:ResourceSet" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="guid" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyTypePropertyType">
+    <xs:simpleContent>
+      <xs:extension base="tns:PolicyTypeType">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="PolicyTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Include"/>
+      <xs:enumeration value="Internal"/>
+      <xs:enumeration value="Global"/>
+      <xs:enumeration value="Identity Provider"/>
+      <xs:enumeration value="Service Operation"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="PolicyValidationContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="PolicyType" type="tns:PolicyTypePropertyType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Resources" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="tns:ResourceSet" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyValidationMessageType">
+    <xs:sequence>
+      <xs:element name="AssertionPath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Assertion" type="tns:AssertionDetailType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Message" type="tns:StringPropertyType"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="assertionOrdinal" type="xs:int" use="required"/>
+    <xs:attribute name="level" type="xs:string" use="required"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyValidationResultType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="ValidationStatus" type="tns:ValidationStatusPropertyType"/>
+          <xs:element name="ValidationMessages" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ValidationMessage" type="tns:PolicyValidationMessageType" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PolicyVersionType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="ordinal" type="xs:long"/>
+          <xs:element name="comment" type="xs:string" minOccurs="0"/>
+          <xs:element name="policyId" type="xs:string" minOccurs="0"/>
+          <xs:element name="time" type="xs:long"/>
+          <xs:element name="active" type="xs:boolean"/>
+          <xs:element name="xml" type="xs:string" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeyCreationContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Dn" type="tns:StringPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="securityZoneId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeyExportContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Alias" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Password" type="tns:StringPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeyExportResultType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Pkcs12Data" type="tns:BinaryPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeyGenerateCsrContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Dn" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeyGenerateCsrResultType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="CsrData" type="tns:BinaryPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeyImportContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Pkcs12Data" type="tns:BinaryPropertyType"/>
+          <xs:element name="Alias" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Password" type="tns:StringPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="securityZoneId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeySignCertResultType">
+    <xs:sequence>
+      <xs:element name="CertData" type="tns:StringPropertyType"/>
+    </xs:sequence>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeySpecialPurposeContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="SpecialPurposes" type="tns:StringListPropertyType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PrivateKeyType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="CertificateChain">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="tns:CertificateData" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="alias" type="xs:string" use="required"/>
+        <xs:attribute name="keystoreId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="PropertiesMapEntryType">
+    <xs:sequence>
+      <xs:choice>
+        <xs:element ref="tns:Value"/>
+        <xs:element ref="tns:StringValue"/>
+        <xs:element ref="tns:BooleanValue"/>
+        <xs:element ref="tns:IntegerValue"/>
+        <xs:element ref="tns:LongValue"/>
+        <xs:element ref="tns:DateValue"/>
+      </xs:choice>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="key" type="xs:string"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="PropertiesMapType">
+    <xs:sequence>
+      <xs:element name="Property" type="tns:PropertiesMapEntryType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:simpleType name="RbacRolePermissionOperationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CREATE"/>
+      <xs:enumeration value="READ"/>
+      <xs:enumeration value="UPDATE"/>
+      <xs:enumeration value="DELETE"/>
+      <xs:enumeration value="OTHER"/>
+      <xs:enumeration value="NONE"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:simpleType name="RbacRolePredicateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AttributePredicate"/>
+      <xs:enumeration value="EntityFolderAncestryPredicate"/>
+      <xs:enumeration value="FolderPredicate"/>
+      <xs:enumeration value="ObjectIdentityPredicate"/>
+      <xs:enumeration value="SecurityZonePredicate"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="RbacRoleType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="description" type="xs:string" minOccurs="0"/>
+          <xs:element name="userCreated" type="xs:boolean"/>
+          <xs:element name="permissions" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="permission" type="tns:RolePermissionType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="assignments" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="assignment" type="tns:RoleAssignmentType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="entityType" type="xs:string" minOccurs="0"/>
+          <xs:element name="entityID" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ReferenceListPropertyType">
+    <xs:sequence>
+      <xs:element name="Reference" type="tns:ReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="resourceUri" type="xs:string"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="ReferenceType">
+    <xs:sequence/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="resourceUri" type="xs:string"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="RemoveAssignmentsContextType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="assignments" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="assignmentId" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ResourceDocumentType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Resource" type="tns:ResourceType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ResourceSetType">
+    <xs:sequence>
+      <xs:element name="Resource" type="tns:ResourceType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="rootUrl" type="xs:string"/>
+    <xs:attribute name="tag" type="xs:string" use="required"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="ResourceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="id" type="xs:ID"/>
+        <xs:attribute name="sourceUrl" type="xs:string"/>
+        <xs:attribute name="type" type="xs:string" use="required"/>
+        <xs:attribute name="version" type="xs:int"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="RevocationCheckingPolicyItem">
+    <xs:sequence>
+      <xs:element name="Type" type="tns:RevocationCheckingPolicyItemType"/>
+      <xs:element name="Url" type="xs:string"/>
+      <xs:element name="AllowIssuerSignature" type="xs:boolean"/>
+      <xs:element name="TrustedSigners" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:simpleType name="RevocationCheckingPolicyItemType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CRL from certificate URL"/>
+      <xs:enumeration value="CRL from URL"/>
+      <xs:enumeration value="OCSP from certificate URL"/>
+      <xs:enumeration value="OCSP from URL"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="RevocationCheckingPolicyType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="DefaultPolicy" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="ContinueOnServerUnavailable" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="DefaultSuccess" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="RevocationCheckItems" type="tns:RevocationCheckingPolicyItem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="RoleAssignmentType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="providerId" type="xs:string"/>
+          <xs:element name="identityId" type="xs:string" minOccurs="0"/>
+          <xs:element name="identityName" type="xs:string" minOccurs="0"/>
+          <xs:element name="entityType" type="xs:string" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="RolePermissionType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="operationType" type="tns:RbacRolePermissionOperationType"/>
+          <xs:element name="otherOperationName" type="xs:string" minOccurs="0"/>
+          <xs:element name="entityType" type="xs:string" minOccurs="0"/>
+          <xs:element name="predicates" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="predicate" type="tns:RolePredicateType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="RolePredicateType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="type" type="tns:RbacRolePredicateType"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="SampleMessageType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="ServiceId" type="xs:string" minOccurs="0"/>
+          <xs:element name="Operation" type="xs:string" minOccurs="0"/>
+          <xs:element name="Xml" type="xs:string"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="ScheduledTaskJobStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Scheduled"/>
+      <xs:enumeration value="Completed"/>
+      <xs:enumeration value="Disabled"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:simpleType name="ScheduledTaskJobTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="One time"/>
+      <xs:enumeration value="Recurring"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="ScheduledTaskType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="PolicyReference" type="tns:ReferenceType"/>
+          <xs:element name="OneNode" type="xs:boolean"/>
+          <xs:element name="JobType" type="tns:ScheduledTaskJobTypeType"/>
+          <xs:element name="JobStatus" type="tns:ScheduledTaskJobStatusType"/>
+          <xs:element name="ExecutionDate" type="xs:dateTime" minOccurs="0"/>
+          <xs:element name="CronExpression" type="xs:string" minOccurs="0"/>
+          <xs:element name="ExecuteOnCreate" type="xs:boolean" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="SecurityTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FTP_UNSECURED"/>
+      <xs:enumeration value="FTPS_EXPLICIT"/>
+      <xs:enumeration value="FTPS_IMPLICIT"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="SecurityZoneableObjectType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence/>
+        <xs:attribute name="securityZoneId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="SecurityZoneType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Description" type="tns:StringPropertyType"/>
+          <xs:element name="PermittedEntityTypes" type="tns:StringListPropertyType"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="ServerModuleFileModuleTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Modular Assertion"/>
+      <xs:enumeration value="Custom Assertion"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="ServerModuleFileType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="ModuleType" type="tns:ServerModuleFileModuleTypeType"/>
+          <xs:element name="ModuleSha256" type="xs:string"/>
+          <xs:element name="ModuleData" type="tns:BinaryPropertyType" minOccurs="0"/>
+          <xs:element name="Signature" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ServiceAliasType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="ServiceReference" type="tns:ReferenceType"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="folderId" type="xs:string"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ServiceDetailType">
+    <xs:sequence>
+      <xs:element name="Name" type="tns:StringPropertyType"/>
+      <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+      <xs:element name="ServiceMappings" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:HttpMapping"/>
+              <xs:element ref="tns:SoapMapping"/>
+            </xs:choice>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="folderId" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="version" type="xs:int"/>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="ServiceMappingType" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+            
+  <xs:complexType name="ServiceType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="ServiceDetail" type="tns:ServiceDetailType"/>
+          <xs:element name="Resources">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="tns:ResourceSet" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="SeverityThresholdType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL"/>
+      <xs:enumeration value="FINEST"/>
+      <xs:enumeration value="FINER"/>
+      <xs:enumeration value="FINE"/>
+      <xs:enumeration value="CONFIG"/>
+      <xs:enumeration value="INFO"/>
+      <xs:enumeration value="WARNING"/>
+      <xs:enumeration value="SEVERE"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:simpleType name="SinkTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FILE"/>
+      <xs:enumeration value="SYSLOG"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="SiteMinderConfigurationType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Address" type="tns:StringPropertyType"/>
+          <xs:element name="Hostname" type="tns:StringPropertyType"/>
+          <xs:element name="HostConfiguration" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="UserName" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="PasswordId" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Enabled" type="tns:BooleanPropertyType"/>
+          <xs:element name="FipsMode" type="tns:IntegerPropertyType" minOccurs="0"/>
+          <xs:element name="IpCheck" type="tns:BooleanPropertyType"/>
+          <xs:element name="UpdateSsoToken" type="tns:BooleanPropertyType"/>
+          <xs:element name="ClusterThreshold" type="tns:IntegerPropertyType" minOccurs="0"/>
+          <xs:element name="NonClusterFailover" type="tns:BooleanPropertyType"/>
+          <xs:element name="Secret" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="SoapServiceMappingType">
+    <xs:complexContent>
+      <xs:extension base="tns:ServiceMappingType">
+        <xs:sequence>
+          <xs:element name="Lax" type="tns:BooleanPropertyType"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="SolutionKitType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="SolutionKitGuid" type="xs:string"/>
+          <xs:element name="SolutionKitVersion" type="xs:string"/>
+          <xs:element name="ParentReference" type="tns:ReferenceType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="InstallProperties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="UninstallBundle" type="xs:string" minOccurs="0"/>
+          <xs:element name="Mappings" type="xs:string"/>
+          <xs:element name="LastUpdateTime" type="xs:long"/>
+          <xs:element name="EntityOwnershipDescriptors" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="tns:EntityOwnershipDescriptor" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="StoredPasswordType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element name="Password" type="tns:StringPropertyType" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="StringListPropertyType">
+    <xs:sequence>
+      <xs:element name="StringValue" type="tns:StringPropertyType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="StringPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="StringValueType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:complexType name="TlsSettingsType" final="extension restriction">
+    <xs:sequence>
+      <xs:element name="ClientAuthentication" type="tns:ClientAuthenticationPropertyType" minOccurs="0"/>
+      <xs:element name="PrivateKeyReference" type="tns:ReferenceType" minOccurs="0"/>
+      <xs:element name="EnabledVersions" type="tns:StringListPropertyType"/>
+      <xs:element name="EnabledCipherSuites" type="tns:StringListPropertyType" minOccurs="0"/>
+      <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="TrustedCertificateExtensionType">
+    <xs:sequence>
+      <xs:element name="RevocationCheckingPolicyReference" type="tns:ReferenceType" minOccurs="0"/>
+      <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="TrustedCertificateType">
+    <xs:complexContent>
+      <xs:extension base="tns:SecurityZoneableObjectType">
+        <xs:sequence>
+          <xs:element name="Name" type="tns:StringPropertyType"/>
+          <xs:element ref="tns:CertificateData"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:TrustedCertificateExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="UserType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Login" type="xs:string"/>
+          <xs:element name="Password" type="tns:PasswordFormattedType" minOccurs="0"/>
+          <xs:element name="FirstName" type="xs:string" minOccurs="0"/>
+          <xs:element name="LastName" type="xs:string" minOccurs="0"/>
+          <xs:element name="Email" type="xs:string" minOccurs="0"/>
+          <xs:element name="Department" type="xs:string" minOccurs="0"/>
+          <xs:element name="SubjectDn" type="xs:string" minOccurs="0"/>
+          <xs:element name="Properties" type="tns:PropertiesMapType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="providerId" type="xs:string" use="required"/>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+            
+  <xs:complexType name="ValidationStatusPropertyType">
+    <xs:simpleContent>
+      <xs:extension base="tns:ValidationStatusType">
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+            
+  <xs:simpleType name="ValidationStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK"/>
+      <xs:enumeration value="Warning"/>
+      <xs:enumeration value="Error"/>
+    </xs:restriction>
+  </xs:simpleType>
+            
+  <xs:complexType name="ValueType">
+    <xs:sequence>
+      <xs:element name="Item" type="xs:anyType" nillable="true" minOccurs="0"/>
+      <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:anyAttribute processContents="skip" namespace="##any"/>
+  </xs:complexType>
+            
+  <xs:complexType name="VersionCommentType">
+    <xs:complexContent>
+      <xs:extension base="tns:ManagedObjectType">
+        <xs:sequence>
+          <xs:element name="Comment" type="tns:StringPropertyType"/>
+          <xs:element name="VersionNumber" type="tns:IntegerPropertyType" minOccurs="0"/>
+          <xs:element name="Extension" type="tns:ExtensionType" minOccurs="0"/>
+          <xs:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="skip" namespace="##any"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

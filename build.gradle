@@ -16,9 +16,9 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.ca.apim.gateway:gateway-export-plugin:0.6.65-SNAPSHOT"
-        classpath "com.ca.apim.gateway:gateway-import-plugin:0.6.65-SNAPSHOT"
-        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.6.65-SNAPSHOT"
+        classpath "com.ca.apim.gateway:gateway-export-plugin:0.8.+"
+        classpath "com.ca.apim.gateway:gateway-import-plugin:0.8.+"
+        classpath "com.ca.apim.gateway:gateway-developer-plugin:0.8.+"
     }
 }
 

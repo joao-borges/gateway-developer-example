@@ -7,6 +7,7 @@ gateway-solution/another-service:
   - "GET"
   - "PUT"
   properties: {}
+  wssProcessingEnabled: false
 gateway-solution/db-service:
   url: "/db-service"
   policy: "gateway-solution/db-service"
@@ -16,6 +17,7 @@ gateway-solution/db-service:
   - "GET"
   - "PUT"
   properties: {}
+  wssProcessingEnabled: false
 gateway-solution/my-gateway-api:
   url: "/example"
   policy: "gateway-solution/my-gateway-api"
@@ -25,6 +27,7 @@ gateway-solution/my-gateway-api:
   - "GET"
   - "PUT"
   properties: {}
+  wssProcessingEnabled: false
 gateway-solution/ftp-service:
   url: "/ftp-service"
   policy: "gateway-solution/ftp-service"
@@ -34,6 +37,7 @@ gateway-solution/ftp-service:
   - "GET"
   - "PUT"
   properties: {}
+  wssProcessingEnabled: false
 gateway-solution/cassandra-service:
   url: "/cassandra-service"
   policy: "gateway-solution/cassandra-service"
@@ -43,12 +47,18 @@ gateway-solution/cassandra-service:
   - "GET"
   - "PUT"
   properties: {}
+  wssProcessingEnabled: false
 gateway-solution/soap/PlayerStatsService:
-  url: "/playerStatsService"
   policy: "gateway-solution/soap/PlayerStatsService"
   httpMethods:
   - "POST"
   properties: {}
+  soapResources:
+  - rootUrl: "http://apim-hugh.lvn.broadcom.net:8081/axis/services/PlayerStats?wsdl"
+    type: "wsdl"
+  soapVersion: "1.1"
+  wssProcessingEnabled: true
+  wsdlRootUrl: "http://apim-hugh.lvn.broadcom.net:8081/axis/services/PlayerStats?wsdl"
 gateway-solution/remote-cache-service:
   url: "/remote-cache-service"
   policy: "gateway-solution/remote-cache-service"
@@ -58,6 +68,7 @@ gateway-solution/remote-cache-service:
   - "GET"
   - "PUT"
   properties: {}
+  wssProcessingEnabled: false
 gateway-solution/websocket:
   url: "/websocket"
   policy: "gateway-solution/websocket"
@@ -67,3 +78,47 @@ gateway-solution/websocket:
   - "GET"
   - "PUT"
   properties: {}
+  wssProcessingEnabled: false
+gateway-solution/Gateway Management Service:
+  url: "/wsman"
+  policy: "gateway-solution/Gateway Management Service"
+  httpMethods:
+  - "POST"
+  properties: {}
+  soapResources:
+  - rootUrl: "file://__ssginternal/gateway-management-8_2_00.wsdl"
+    type: "wsdl"
+  - rootUrl: "http://schemas.xmlsoap.org/ws/2004/08/eventing/eventing.wsdl"
+    type: "wsdl"
+  - rootUrl: "http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd"
+    type: "xmlschema"
+  - rootUrl: "http://schemas.xmlsoap.org/ws/2004/09/transfer/transfer.wsdl"
+    type: "wsdl"
+  - rootUrl: "http://schemas.xmlsoap.org/ws/2004/08/eventing/eventing.xsd"
+    type: "xmlschema"
+  - rootUrl: "http://schemas.xmlsoap.org/ws/2004/09/enumeration/enumeration.xsd"
+    type: "xmlschema"
+  - rootUrl: "file://__ssginternal/gateway-management.xsd"
+    type: "xmlschema"
+  - rootUrl: "http://www.w3.org/2001/xml.xsd"
+    type: "xmlschema"
+  - rootUrl: "http://schemas.xmlsoap.org/ws/2004/09/transfer/transfer.xsd"
+    type: "xmlschema"
+  - rootUrl: "http://schemas.xmlsoap.org/ws/2004/08/addressing/addressing.xsd"
+    type: "xmlschema"
+  - rootUrl: "http://schemas.xmlsoap.org/ws/2004/09/enumeration/enumeration.wsdl"
+    type: "wsdl"
+  soapVersion: "1.2"
+  wssProcessingEnabled: true
+  wsdlRootUrl: "file://__ssginternal/gateway-management-8_2_00.wsdl"
+gateway-solution/Properties Service:
+  url: "/propertiesService"
+  policy: "gateway-solution/Properties Service"
+  httpMethods:
+  - "DELETE"
+  - "POST"
+  - "GET"
+  - "PUT"
+  properties:
+    ENV.serviceProperty:
+  wssProcessingEnabled: false

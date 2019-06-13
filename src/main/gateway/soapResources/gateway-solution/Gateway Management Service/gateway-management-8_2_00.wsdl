@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions targetNamespace="http://ns.l7tech.com/2010/04/gateway-management" tns:targetNamespace="http://ns.l7tech.com/2010/04/gateway-management" xmlns:wsen="http://schemas.xmlsoap.org/ws/2004/09/enumeration" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wse="http://schemas.xmlsoap.org/ws/2004/08/eventing" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wxf="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:wsman="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:tns="http://ns.l7tech.com/2010/04/gateway-management" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <!-- Imports -->
+  <import namespace="http://schemas.xmlsoap.org/ws/2004/09/transfer" location="http://schemas.xmlsoap.org/ws/2004/09/transfer/transfer.wsdl"/>
+  <import namespace="http://schemas.xmlsoap.org/ws/2004/09/enumeration" location="http://schemas.xmlsoap.org/ws/2004/09/enumeration/enumeration.wsdl"/>
+  <import namespace="http://schemas.xmlsoap.org/ws/2004/08/eventing" location="http://schemas.xmlsoap.org/ws/2004/08/eventing/eventing.wsdl"/>
+  <types>
+    <xs:schema elementFormDefault="qualified" blockDefault="#all">
+      <xs:import namespace="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" schemaLocation="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" blockDefault="#all">
+      <xs:import namespace="http://ns.l7tech.com/2010/04/gateway-management" schemaLocation="gateway-management.xsd"/>
+    </xs:schema>
+  </types>
+  <!-- WS-Management Messages -->
+  <message name="ResourceURIMessage">
+    <part name="ResourceURIPart" element="wsman:ResourceURI"/>
+  </message>
+  <message name="SelectorSetMessage">
+    <part name="SelectorSetPart" element="wsman:SelectorSet"/>
+  </message>
+  <message name="OptionSetMessage">
+    <part name="OptionSetPart" element="wsman:OptionSet"/>
+  </message>
+  <message name="OperationTimeoutMessage">
+    <part name="OperationTimeoutPart" element="wsman:OperationTimeout"/>
+  </message>
+  <message name="RequestTotalItemsCountEstimateMessage">
+    <part name="RequestTotalItemsCountEstimatePart" element="wsman:RequestTotalItemsCountEstimate"/>
+  </message>
+  <message name="TotalItemsCountEstimateMessage">
+    <part name="TotalItemsCountEstimatePart" element="wsman:TotalItemsCountEstimate"/>
+  </message>
+  <message name="FragmentTransferMessage">
+    <part name="FragmentTransferPart" element="wsman:FragmentTransfer"/>
+  </message>
+  <!-- Resource Messages -->
+  <message name="Message">
+    <part name="Part" element="tns:"/>
+  </message>
+  <message name="ActiveConnectorMessage">
+    <part name="ActiveConnectorPart" element="tns:ActiveConnector"/>
+  </message>
+  <message name="AddAssignmentsContextMessage">
+    <part name="AddAssignmentsContextPart" element="tns:AddAssignmentsContext"/>
+  </message>
+  <message name="AssertionSecurityZoneMessage">
+    <part name="AssertionSecurityZonePart" element="tns:AssertionSecurityZone"/>
+  </message>
+  <message name="ClusterPropertyMessage">
+    <part name="ClusterPropertyPart" element="tns:ClusterProperty"/>
+  </message>
+  <message name="CustomKeyValueMessage">
+    <part name="CustomKeyValuePart" element="tns:CustomKeyValue"/>
+  </message>
+  <message name="EmailListenerMessage">
+    <part name="EmailListenerPart" element="tns:EmailListener"/>
+  </message>
+  <message name="EncapsulatedAssertionMessage">
+    <part name="EncapsulatedAssertionPart" element="tns:EncapsulatedAssertion"/>
+  </message>
+  <message name="EncapsulatedAssertionExportResultMessage">
+    <part name="EncapsulatedAssertionExportResultPart" element="tns:EncapsulatedAssertionExportResult"/>
+  </message>
+  <message name="EncapsulatedAssertionImportResultMessage">
+    <part name="EncapsulatedAssertionImportResultPart" element="tns:EncapsulatedAssertionImportResult"/>
+  </message>
+  <message name="EncassImportContextMessage">
+    <part name="EncassImportContextPart" element="tns:EncassImportContext"/>
+  </message>
+  <message name="FolderMessage">
+    <part name="FolderPart" element="tns:Folder"/>
+  </message>
+  <message name="GenericEntityMessage">
+    <part name="GenericEntityPart" element="tns:GenericEntity"/>
+  </message>
+  <message name="HttpConfigurationMessage">
+    <part name="HttpConfigurationPart" element="tns:HttpConfiguration"/>
+  </message>
+  <message name="IdentityProviderMessage">
+    <part name="IdentityProviderPart" element="tns:IdentityProvider"/>
+  </message>
+  <message name="InterfaceTagMessage">
+    <part name="InterfaceTagPart" element="tns:InterfaceTag"/>
+  </message>
+  <message name="JDBCConnectionMessage">
+    <part name="JDBCConnectionPart" element="tns:JDBCConnection"/>
+  </message>
+  <message name="JMSDestinationMessage">
+    <part name="JMSDestinationPart" element="tns:JMSDestination"/>
+  </message>
+  <message name="ListenPortMessage">
+    <part name="ListenPortPart" element="tns:ListenPort"/>
+  </message>
+  <message name="PolicyMessage">
+    <part name="PolicyPart" element="tns:Policy"/>
+  </message>
+  <message name="PolicyAliasMessage">
+    <part name="PolicyAliasPart" element="tns:PolicyAlias"/>
+  </message>
+  <message name="PolicyExportResultMessage">
+    <part name="PolicyExportResultPart" element="tns:PolicyExportResult"/>
+  </message>
+  <message name="PolicyImportContextMessage">
+    <part name="PolicyImportContextPart" element="tns:PolicyImportContext"/>
+  </message>
+  <message name="PolicyImportResultMessage">
+    <part name="PolicyImportResultPart" element="tns:PolicyImportResult"/>
+  </message>
+  <message name="PolicyValidationContextMessage">
+    <part name="PolicyValidationContextPart" element="tns:PolicyValidationContext"/>
+  </message>
+  <message name="PolicyValidationResultMessage">
+    <part name="PolicyValidationResultPart" element="tns:PolicyValidationResult"/>
+  </message>
+  <message name="PrivateKeyMessage">
+    <part name="PrivateKeyPart" element="tns:PrivateKey"/>
+  </message>
+  <message name="PrivateKeyCreationContextMessage">
+    <part name="PrivateKeyCreationContextPart" element="tns:PrivateKeyCreationContext"/>
+  </message>
+  <message name="PrivateKeyExportContextMessage">
+    <part name="PrivateKeyExportContextPart" element="tns:PrivateKeyExportContext"/>
+  </message>
+  <message name="PrivateKeyExportResultMessage">
+    <part name="PrivateKeyExportResultPart" element="tns:PrivateKeyExportResult"/>
+  </message>
+  <message name="PrivateKeyGenerateCsrContextMessage">
+    <part name="PrivateKeyGenerateCsrContextPart" element="tns:PrivateKeyGenerateCsrContext"/>
+  </message>
+  <message name="PrivateKeyGenerateCsrResultMessage">
+    <part name="PrivateKeyGenerateCsrResultPart" element="tns:PrivateKeyGenerateCsrResult"/>
+  </message>
+  <message name="PrivateKeyImportContextMessage">
+    <part name="PrivateKeyImportContextPart" element="tns:PrivateKeyImportContext"/>
+  </message>
+  <message name="PrivateKeySpecialPurposeContextMessage">
+    <part name="PrivateKeySpecialPurposeContextPart" element="tns:PrivateKeySpecialPurposeContext"/>
+  </message>
+  <message name="RemoveAssignmentsContextMessage">
+    <part name="RemoveAssignmentsContextPart" element="tns:RemoveAssignmentsContext"/>
+  </message>
+  <message name="ResourceDocumentMessage">
+    <part name="ResourceDocumentPart" element="tns:ResourceDocument"/>
+  </message>
+  <message name="RevocationCheckingPolicyMessage">
+    <part name="RevocationCheckingPolicyPart" element="tns:RevocationCheckingPolicy"/>
+  </message>
+  <message name="RoleMessage">
+    <part name="RolePart" element="tns:Role"/>
+  </message>
+  <message name="SecurityZoneMessage">
+    <part name="SecurityZonePart" element="tns:SecurityZone"/>
+  </message>
+  <message name="ServiceMessage">
+    <part name="ServicePart" element="tns:Service"/>
+  </message>
+  <message name="ServiceAliasMessage">
+    <part name="ServiceAliasPart" element="tns:ServiceAlias"/>
+  </message>
+  <message name="SiteMinderConfigurationMessage">
+    <part name="SiteMinderConfigurationPart" element="tns:SiteMinderConfiguration"/>
+  </message>
+  <message name="StoredPasswordMessage">
+    <part name="StoredPasswordPart" element="tns:StoredPassword"/>
+  </message>
+  <message name="TrustedCertificateMessage">
+    <part name="TrustedCertificatePart" element="tns:TrustedCertificate"/>
+  </message>
+  <message name="VersionCommentMessage">
+    <part name="VersionCommentPart" element="tns:VersionComment"/>
+  </message>
+  <!-- PortTypes -->
+  <portType name="GatewayManagementPortType">
+    <!--  WS-Transfer Operations -->
+    <operation name="Create">
+      <input message="wxf:AnyXmlMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/Create"/>
+      <output message="wxf:CreateResponseMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/CreateResponse"/>
+    </operation>
+    <operation name="Get">
+      <input message="wxf:EmptyMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/Get"/>
+      <output message="wxf:AnyXmlMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse"/>
+    </operation>
+    <operation name="Put">
+      <input message="wxf:AnyXmlMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/Put"/>
+      <output message="wxf:OptionalXmlMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/PutResponse"/>
+    </operation>
+    <operation name="Delete">
+      <input message="wxf:EmptyMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/Delete"/>
+      <output message="wxf:EmptyMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/DeleteResponse"/>
+    </operation>
+    <!-- Resource Operations -->
+    <operation name="encapsulatedAssertionsExportEncass">
+      <input message="wxf:EmptyMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/encapsulatedAssertions/ExportEncass"/>
+      <output message="tns:EncapsulatedAssertionExportResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/encapsulatedAssertions/ExportEncassResponse"/>
+    </operation>
+    <operation name="encapsulatedAssertionsImportEncass">
+      <input message="tns:EncassImportContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/encapsulatedAssertions/ImportEncass"/>
+      <output message="tns:EncapsulatedAssertionImportResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/encapsulatedAssertions/ImportEncassResponse"/>
+    </operation>
+    <operation name="policiesExportPolicy">
+      <input message="wxf:EmptyMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/ExportPolicy"/>
+      <output message="tns:PolicyExportResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/ExportPolicyResponse"/>
+    </operation>
+    <operation name="policiesImportPolicy">
+      <input message="tns:PolicyImportContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/ImportPolicy"/>
+      <output message="tns:PolicyImportResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/ImportPolicyResponse"/>
+    </operation>
+    <operation name="policiesSetVersionComment">
+      <input message="tns:VersionCommentMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/SetVersionComment"/>
+      <output message="tns:Message" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/SetVersionCommentResponse"/>
+    </operation>
+    <operation name="policiesValidatePolicy">
+      <input message="tns:PolicyValidationContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/ValidatePolicy"/>
+      <output message="tns:PolicyValidationResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/policies/ValidatePolicyResponse"/>
+    </operation>
+    <operation name="privateKeysCreateKey">
+      <input message="tns:PrivateKeyCreationContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/CreateKey"/>
+      <output message="tns:PrivateKeyMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/CreateKeyResponse"/>
+    </operation>
+    <operation name="privateKeysExportKey">
+      <input message="tns:PrivateKeyExportContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/ExportKey"/>
+      <output message="tns:PrivateKeyExportResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/ExportKeyResponse"/>
+    </operation>
+    <operation name="privateKeysGenerateCSR">
+      <input message="tns:PrivateKeyGenerateCsrContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/GenerateCSR"/>
+      <output message="tns:PrivateKeyGenerateCsrResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/GenerateCSRResponse"/>
+    </operation>
+    <operation name="privateKeysImportKey">
+      <input message="tns:PrivateKeyImportContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/ImportKey"/>
+      <output message="tns:PrivateKeyMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/ImportKeyResponse"/>
+    </operation>
+    <operation name="privateKeysSetSpecialPurposes">
+      <input message="tns:PrivateKeySpecialPurposeContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/SetSpecialPurposes"/>
+      <output message="tns:PrivateKeyMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/SetSpecialPurposesResponse"/>
+    </operation>
+    <operation name="rolesAddAssignments">
+      <input message="tns:AddAssignmentsContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/roles/AddAssignments"/>
+      <output message="tns:Message" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/roles/AddAssignmentsResponse"/>
+    </operation>
+    <operation name="rolesRemoveAssignments">
+      <input message="tns:RemoveAssignmentsContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/roles/RemoveAssignments"/>
+      <output message="tns:Message" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/roles/RemoveAssignmentsResponse"/>
+    </operation>
+    <operation name="servicesExportPolicy">
+      <input message="wxf:EmptyMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/ExportPolicy"/>
+      <output message="tns:PolicyExportResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/ExportPolicyResponse"/>
+    </operation>
+    <operation name="servicesImportPolicy">
+      <input message="tns:PolicyImportContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/ImportPolicy"/>
+      <output message="tns:PolicyImportResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/ImportPolicyResponse"/>
+    </operation>
+    <operation name="servicesSetVersionComment">
+      <input message="tns:VersionCommentMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/SetVersionComment"/>
+      <output message="tns:Message" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/SetVersionCommentResponse"/>
+    </operation>
+    <operation name="servicesValidatePolicy">
+      <input message="tns:PolicyValidationContextMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/ValidatePolicy"/>
+      <output message="tns:PolicyValidationResultMessage" wsa:Action="http://ns.l7tech.com/2010/04/gateway-management/services/ValidatePolicyResponse"/>
+    </operation>
+    <!--  WS-Enumeration Operations -->
+    <operation name="EnumerateOp">
+      <input message="wsen:EnumerateMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Enumerate"/>
+      <output message="wsen:EnumerateResponseMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/EnumerateResponse"/>
+    </operation>
+    <operation name="PullOp">
+      <input message="wsen:PullMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Pull"/>
+      <output message="wsen:PullResponseMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/PullResponse"/>
+    </operation>
+    <operation name="RenewOp">
+      <input message="wsen:RenewMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Renew"/>
+      <output message="wsen:RenewResponseMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/RenewResponse"/>
+    </operation>
+    <operation name="GetStatusOp">
+      <input message="wsen:GetStatusMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/GetStatus"/>
+      <output message="wsen:GetStatusResponseMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/GetStatusResponse"/>
+    </operation>
+    <operation name="ReleaseOp">
+      <input message="wsen:ReleaseMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Release"/>
+      <output message="wsen:ReleaseResponseMessage" wsa:Action="http://schemas.xmlsoap.org/ws/2004/09/enumeration/ReleaseResponse"/>
+    </operation>
+  </portType>
+  <!-- Bindings -->
+  <binding name="GatewayManagementBinding" type="tns:GatewayManagementPortType">
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <!--  WS-Transfer Operations -->
+    <operation name="Get">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Get"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:header message="tns:FragmentTransferMessage" part="FragmentTransferPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="Put">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Put"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:header message="tns:FragmentTransferMessage" part="FragmentTransferPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="Delete">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Delete"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="Create">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/Create"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <!-- Resource Operations -->
+    <operation name="encapsulatedAssertionsExportEncass">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/encapsulatedAssertions/ExportEncass"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="encapsulatedAssertionsImportEncass">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/encapsulatedAssertions/ImportEncass"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="policiesExportPolicy">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/policies/ExportPolicy"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="policiesImportPolicy">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/policies/ImportPolicy"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="policiesSetVersionComment">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/policies/SetVersionComment"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="policiesValidatePolicy">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/policies/ValidatePolicy"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="privateKeysCreateKey">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/CreateKey"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="privateKeysExportKey">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/ExportKey"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="privateKeysGenerateCSR">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/GenerateCSR"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="privateKeysImportKey">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/ImportKey"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="privateKeysSetSpecialPurposes">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/privateKeys/SetSpecialPurposes"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="rolesAddAssignments">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/roles/AddAssignments"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="rolesRemoveAssignments">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/roles/RemoveAssignments"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="servicesExportPolicy">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/services/ExportPolicy"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="servicesImportPolicy">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/services/ImportPolicy"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="servicesSetVersionComment">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/services/SetVersionComment"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="servicesValidatePolicy">
+      <wsoap12:operation soapAction="http://ns.l7tech.com/2010/04/gateway-management/services/ValidatePolicy"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <!-- WS-Enumeration Operations -->
+    <operation name="EnumerateOp">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Enumerate"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:header message="tns:RequestTotalItemsCountEstimateMessage" part="RequestTotalItemsCountEstimatePart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:header message="tns:TotalItemsCountEstimateMessage" part="TotalItemsCountEstimatePart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="PullOp">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Pull"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:header message="tns:RequestTotalItemsCountEstimateMessage" part="RequestTotalItemsCountEstimatePart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:header message="tns:TotalItemsCountEstimateMessage" part="TotalItemsCountEstimatePart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="RenewOp">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Renew"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="GetStatusOp">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/GetStatus"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="ReleaseOp">
+      <wsoap12:operation soapAction="http://schemas.xmlsoap.org/ws/2004/09/enumeration/Release"/>
+      <input>
+        <wsoap12:header message="tns:ResourceURIMessage" part="ResourceURIPart" use="literal"/>
+        <wsoap12:header message="tns:SelectorSetMessage" part="SelectorSetPart" use="literal"/>
+        <wsoap12:header message="tns:OptionSetMessage" part="OptionSetPart" use="literal"/>
+        <wsoap12:header message="tns:OperationTimeoutMessage" part="OperationTimeoutPart" use="literal"/>
+        <wsoap12:body use="literal"/>
+      </input>
+      <output>
+        <wsoap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <!-- Services -->
+  <service name="GatewayManagementService">
+    <!--
+                   Service for management of the following resources:
+                   
+                        http://ns.l7tech.com/2010/04/gateway-management/activeConnectors
+                        http://ns.l7tech.com/2010/04/gateway-management/assertionSecurityZones
+                        http://ns.l7tech.com/2010/04/gateway-management/clusterProperties
+                        http://ns.l7tech.com/2010/04/gateway-management/customKeyValues
+                        http://ns.l7tech.com/2010/04/gateway-management/emailListeners
+                        http://ns.l7tech.com/2010/04/gateway-management/encapsulatedAssertions
+                        http://ns.l7tech.com/2010/04/gateway-management/folders
+                        http://ns.l7tech.com/2010/04/gateway-management/genericEntities
+                        http://ns.l7tech.com/2010/04/gateway-management/httpConfigurations
+                        http://ns.l7tech.com/2010/04/gateway-management/identityProviders
+                        http://ns.l7tech.com/2010/04/gateway-management/interfaceTags
+                        http://ns.l7tech.com/2010/04/gateway-management/jdbcConnections
+                        http://ns.l7tech.com/2010/04/gateway-management/jmsDestinations
+                        http://ns.l7tech.com/2010/04/gateway-management/listenPorts
+                        http://ns.l7tech.com/2010/04/gateway-management/policies
+                        http://ns.l7tech.com/2010/04/gateway-management/policyAliases
+                        http://ns.l7tech.com/2010/04/gateway-management/privateKeys
+                        http://ns.l7tech.com/2010/04/gateway-management/resources
+                        http://ns.l7tech.com/2010/04/gateway-management/revocationCheckingPolicies
+                        http://ns.l7tech.com/2010/04/gateway-management/roles
+                        http://ns.l7tech.com/2010/04/gateway-management/securityZones
+                        http://ns.l7tech.com/2010/04/gateway-management/serviceAliases
+                        http://ns.l7tech.com/2010/04/gateway-management/services
+                        http://ns.l7tech.com/2010/04/gateway-management/siteMinderConfigurations
+                        http://ns.l7tech.com/2010/04/gateway-management/storedPasswords
+                        http://ns.l7tech.com/2010/04/gateway-management/trustedCertificates
+    -->
+    <port name="GatewayManagementPort" binding="tns:GatewayManagementBinding">
+      <wsoap12:address location="http://127.0.0.1:8080/wsman"/>
+    </port>
+  </service>
+</definitions>
